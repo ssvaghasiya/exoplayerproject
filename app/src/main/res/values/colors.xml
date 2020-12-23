@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="transparent">#00ffffff</color>
+    <color name="black_trans">#44000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_transparent">#34FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="dark_orange">#4d2612</color>
+    <color name="edit_background">#f6f6f6</color>
+
+    <color name="blue">#008BFF</color>
+    <color name="text_primary">#4B4B4B</color>
+
+
+    <color name="common_green">#80AD4B</color>
+    <color name="orange_light">#d19314</color>
+    <color name="orange_dark">#CD7C37</color>
+    <color name="primary">#894CD8</color>
+    <color name="primaryDark">#894CD8</color>
+    <color name="accent">#894CD8</color>
+    <color name="secondary">#7C45C8</color>
+    <color name="payment_success_bg">#59B9C7</color>
+    <color name="primary_white">#F5F6FA</color>
+    <color name="common_line_color">#E9EBF2</color>
+
+    <color name="edit_text_color_focused">#A04CE0</color>
+    <color name="error_bg">#E7465D</color>
+    <color name="error_txt_">#9C4066</color>
+    <color name="error_bg_">#4FDF5890</color>
+    <color name="success_bg">#5FC2BD</color>
+    <color name="approve_bg">#4F5FC2BD</color>
+    <color name="approve_text">#4A9793</color>
+    <color name="hint_color">#81839B</color>
+    <color name="bg_gray">#F0F0F0</color>
+    <color name="popup_bg">#F2EBF3</color>
+
+    <color name="light_purple">#7B62D6</color>
+    <color name="col_FDF">#FDFDFD</color>
+
+    <color name="list_devider">#e6e6e6</color>
+    <color name="gray_light">#d0d0d0</color>
+    <color name="common_sign_in_bg">#F5F6F7</color>
+
+    <color name="gray_close">#CDCDCD</color>
+    <color name="gray_light__">#efeff4</color>
+    <color name="gray_light____">#d3d1d2</color>
+    <color name="unselect_color">#757575</color>
+    <color name="black_66">#66000000</color>
+    <color name="black_f2">#F2F2F2</color>
+    <color name="col_666">#666666</color>
+    <color name="col_999">#999999</color>
+    <color name="col_333">#333333</color>
+
+    <color name="editColor">#25272D</color>
+    <color name="grayClr">#666666</color>
+    <color name="card_bg">#3E3D43</color>
+    <color name="divider_gray">#9b9b9b</color>
+    <color name="cancel_txt">#B6B2BE</color>
+
+    <color name="light_header">#C8CDE2</color>
+    <color name="edit_text_disable_bg">#F5F6FA</color>
+    <color name="spin_color">#FFFFFF</color>
+    <color name="btn_gray">#EDECED</color>
+    <color name="spin_color_login">#894CD8</color>
+    <color name="topbar_bg">@color/transparent</color>
+    <color name="screen_bg">#F5F6F7</color>
+    <color name="common_bg">#dfdbd7</color>
+    <color name="txt_clr">#171F24</color>
+    <color name="txt_clr64">#A3171F24</color>
+    <color name="txt_gray">#606060</color>
+    <color name="txt_gray_light">#A2A2A2</color>
+    <color name="card_boarder">#EDEDED</color>
+    <color name="theme_color">#008BFF</color>
+
+    <color name="dot_color">#707070</color>
+    <color name="dot_select_color">#707070</color>
+    <color name="gold">#ffa900</color>
+    <color name="greyLight1">#bbbbbb</color>
+    <color name="greenLight">#17D57E</color>
+    <color name="blue1">#007FFF</color>
+    <color name="blue2">#727CF5</color>
+    <color name="orange">#E69818</color>
+    <color name="darkLightblue">#1BC5BD</color>
+    <color name="main_bg">#F9FAFB</color>
+    <color name="grayL">#AAAAAA</color>
+    <color name="darkBlue">#727CF5</color>
+    <color name="grayvlight">#F2F2F2</color>
+    <color name="blacklight">#828282</color>
+    <color name="blackex">#4e4e4e</color>
+    <color name="whitelight">#f4f4f4</color>
+    <color name="darkblue">#6200EE</color>
+    <color name="darkblueborder">#8132f1</color>
+    <color name="blueback">#f9f5fe</color>
+    <color name="lblue">#717DF5</color>
+    <color name="blueedit">#717DF5</color>
+    <color name="graycircleback">#e8eaeb</color>
+    <color name="graysalesmenText">#9CAAC9</color>
+    <color name="gray_divider">#222a3b</color>
+    <color name="light_blue">#727CF5</color>
+    <color name="orange_light1">#FFB100</color>
+    <color name="gray_drop_down">#626262</color>
+    <color name="black_overlay">#66000000</color>
+
+    <!--    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>-->
+
+</resources>

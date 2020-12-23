@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="eligibility_circle_text_size">34sp</dimen>
+    <dimen name="sp35">37sp</dimen>
+    <dimen name="sp24">26sp</dimen>
+    <dimen name="sp22">24sp</dimen>
+    <dimen name="sp20">22sp</dimen>
+    <dimen name="sp18">20sp</dimen>
+    <dimen name="sp16">18sp</dimen>
+    <dimen name="sp14">16sp</dimen>
+    <dimen name="sp12">14sp</dimen>
+    <dimen name="sp11">12sp</dimen>
+    <dimen name="sp10">11sp</dimen>
+    <dimen name="sp8">9sp</dimen>
+
+    <dimen name="btn_sp16">16sp</dimen>
+    <dimen name="stack_view_height">@dimen/_175sdp</dimen>
+    <dimen name="sliding_card_view_pager_height">@dimen/_155sdp</dimen>
+    <dimen name="width_cardtype">80dp</dimen>
+    <dimen name="height_cardtype">50dp</dimen>
+    <dimen name="card_height">78dp</dimen>
+    <dimen name="height_no_loan">@dimen/_200sdp</dimen>
+</resources>

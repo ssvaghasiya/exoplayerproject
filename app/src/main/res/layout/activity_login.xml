@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.login.viewmodel.LoginViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.login.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"
+        tools:context=".ui.login.view.LoginActivity">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:background="@drawable/shape_for_alert"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <com.newproject.custom.CTextViewEB
+                    style="@style/txt_000_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_5sdp">
+
+                    <com.newproject.custom.CTextView
+                        style="@style/txt_black_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="1dp"
+                        android:text="@string/username" />
+
+                    <com.newproject.custom.CEditTextView
+                        android:id="@+id/edtUserEmail"
+                        style="@style/txt_editText_login_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/shape7"
+                        android:hint="@string/username"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_5sdp">
+
+                    <com.newproject.custom.CTextView
+                        style="@style/txt_black_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingStart="1dp"
+                        android:text="@string/password" />
+
+                    <com.newproject.custom.CEditTextView
+                        android:id="@+id/edtPassword"
+                        style="@style/txt_editText_login_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/shape7"
+                        android:hint="@string/password"
+                        android:inputType="textPassword" />
+
+                </LinearLayout>
+
+                <com.newproject.custom.CTextView
+                    style="@style/txt_black_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/forgot_password" />
+
+                <com.newproject.custom.CButtonView
+                    android:id="@+id/btnSignIn"
+                    style="@style/txt_white_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/shape10"
+                    android:onClick="@{(v)->viewClickHandler.onSignInClick(v)}"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp"
+                    android:text="@string/login"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

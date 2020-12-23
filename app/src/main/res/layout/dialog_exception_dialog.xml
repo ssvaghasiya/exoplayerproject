@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:background="@color/transparent"
+            android:fitsSystemWindows="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp20"
+                android:paddingBottom="@dimen/dp30">
+
+                <com.newproject.custom.CTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/txt_000_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/dp10"
+                    android:paddingStart="@dimen/dp20"
+                    tools:text="@string/app_name" />
+
+
+                <com.newproject.custom.CTextView
+                    android:id="@+id/tvMessage"
+                    style="@style/txt_666_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp10"
+                    android:gravity="left"
+                    android:lineSpacingExtra="@dimen/dp2"
+                    android:paddingStart="@dimen/dp20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMessage">
+
+                    <LinearLayout
+                        android:id="@+id/llNo"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <com.newproject.custom.CTextView
+                            android:id="@+id/tvNo"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:gravity="center"
+                            android:padding="@dimen/dp5"
+                            android:text="@string/btn_no" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llYes"
+                        android:layout_width="@dimen/dp0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <com.newproject.custom.CTextView
+                            android:id="@+id/tvYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:gravity="center"
+                            android:padding="@dimen/dp5"
+                            android:text="@string/btn_yes" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.newproject.custom.CTextView
+                    style="@style/txt_black_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingStart="1dp"
+                    android:text="@string/product_name" />
+
+                <LinearLayout
+                    android:id="@+id/llMadeOrderProduct"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/shape7"
+                    android:orientation="horizontal">
+
+                    <com.newproject.custom.CTextView
+                        android:id="@+id/tvMadeOrderProduct"
+                        style="@style/txt_extra_black_10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:paddingStart="10dp"
+                        android:hint="@string/select_product" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgDropDown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                    <!--                    <Spinner-->
+                    <!--                        android:id="@+id/spinnerMadeOrder"-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:layout_weight="1"-->
+                    <!--                        android:spinnerMode="dropdown" />-->
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <com.newproject.custom.CTextView
+                    style="@style/txt_black_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingStart="1dp"
+                    android:text="@string/quantity" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/txtQuantity"
+                    style="@style/txt_editText_10"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@drawable/shape7"
+                    android:hint="@string/quantity"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgRemove"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_light____button_2__outlined_a__text_enabled" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

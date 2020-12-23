@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_40sdp"
+    android:layout_marginEnd="@dimen/_40sdp"
+    android:background="@drawable/shape_for_alert"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.newproject.custom.CTextViewB
+            style="@style/txt_000_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/skip_this_task"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <com.newproject.custom.CTextViewB
+            style="@style/txt_000_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/nicolas_llc_clinic"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <com.newproject.custom.CTextView
+                style="@style/txt_black_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="1dp"
+                android:text="@string/enter_reason" />
+
+            <com.newproject.custom.CEditTextView
+                style="@style/txt_editText_10"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/shape7"
+                android:gravity="start"
+                android:hint="@string/enter_a_reason_for_skipping_task"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_1sdp">
+
+            <com.newproject.custom.CButtonView
+                android:id="@+id/cancle_alert"
+                style="@style/txt_blue_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:background="@drawable/shape11"
+                android:text="@string/cancel"
+                android:textAllCaps="false" />
+
+            <com.newproject.custom.CButtonView
+                android:id="@+id/confirm_alert"
+                style="@style/txt_white_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/shape10"
+                android:text="@string/confirm"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

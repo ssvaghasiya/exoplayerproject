@@ -1,0 +1,247 @@
+<resources>
+    <string name="app_name">New Project</string>
+
+    <string name="connection_title">No internet connection</string>
+    <string name="connection_not_available">It seems that you are not connected to the Internet. Kindly check your network settings.</string>
+    <string name="btn_ok">OK</string>
+    <string name="hint_email_signup">EMAIL</string>
+    <string name="forgot_PIN">Forgot PIN?</string>
+    <string name="or"><b><u>OR</u></b></string>
+    <string name="st_signup">SIGN UP</string>
+    <string name="st_sign_in_reg">SignIn</string>
+    <string name="default_notification_channel_id">Somerce</string>
+
+    <string name="logout_msg">Are you sure want to logout?</string>
+    <string name="btn_yes">Yes</string>
+    <string name="btn_no">No</string>
+    <string name="menu">Menu</string>
+    <!-- Buttons strings -->
+
+    <!-- Error strings -->
+
+    <!-- Transition type strings -->
+
+    <string name="clear">Clear</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_orders">Orders</string>
+    <string name="nav_delivery">Delivery</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="permission_setting">Permission Setting</string>
+    <string name="settings">Settings</string>
+    <string name="setting">Setting</string>
+    <string name="back">Back</string>
+    <string name="retry">Retry</string>
+    <string name="need_permission_title">Need permission(s)</string>
+    <string name="err_need_permission_msg">You have previously declined this permission.\nYou must approve this permission in \"Permissions\" in the app settings on your device.</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="msg_session_time_out">Session Time Out</string>
+    <string name="err_pass">Enter Valid Password</string>
+    <string name="err_pass_min">Min character of password must be 7</string>
+
+    <string name="field_required" formatted="false">%s is required.</string>
+    <string name="invalid_format" formatted="false">In valid format. Valid format is %s</string>
+    <string name="min_format" formatted="false">Min. %s characters is required.</string>
+    <string name="loan_amount">Loan Amount:</string>
+    <string name="rate">Rate:</string>
+    <string name="term_months">Term Months</string>
+    <string name="payment">Payment:</string>
+    <string name="total_interest">Total Interest:</string>
+    <string name="total_paid">Total Paid:</string>
+    <string name="desired_payment">Desired Payment:</string>
+    <string name="interest_rate">Interest Rate:</string>
+    <string name="offer_price">Offer Price:</string>
+    <string name="tag_registration">Tag/Registration:</string>
+    <string name="dealer_fees">Dealer Fees:</string>
+    <string name="tax_rate">Tax Rate:</string>
+    <string name="trade_allowance">Trade Allowance:</string>
+    <string name="trade_payoff">Trade Payoff:</string>
+    <string name="rebates_discounts">Rebates/Discounts:</string>
+    <string name="cash_down">Cash Down:</string>
+    <string name="current_payment">Current Payment:</string>
+    <string name="loan_term_months">Loan Term Months:</string>
+    <string name="purchese_price">Purchese Price:</string>
+    <string name="sales_tax">Sales Tax:</string>
+    <string name="finance_amount">Finance Amount:</string>
+    <string name="new_payment">New Payment:</string>
+    <string name="payment_increased">Payment Increased</string>
+    <string name="equity">Equity</string>
+    <string name="gross_income_yr">Gross Income Yr:</string>
+    <string name="monthly_debt">Monthly Debt:</string>
+    <string name="taxes">Taxes:</string>
+    <string name="insurance">Insurance:</string>
+    <string name="flood_ins">Flood Ins:</string>
+    <string name="hoa">HOA:</string>
+    <string name="pmi_0">PMI 0%</string>
+    <string name="down_payment">Down Payment:</string>
+    <string name="term_years">Term Years:</string>
+    <string name="p_i_payment"><![CDATA[P & I Payment:]]></string>
+    <string name="tax_ins_hoa_pmi">Tax,ins,HOA,PMI:</string>
+    <string name="total_payment">Total Payment:</string>
+    <string name="loan_to_value_ratio">Loan To Value Ratio:</string>
+    <string name="refinance_int_rate">Refinance Int Rate:</string>
+    <string name="refinance_term_years">Refinance Term Years:</string>
+    <string name="cash_back">Cash Back:</string>
+    <string name="appraisal">Appraisal:</string>
+    <string name="mortgage_balance">Mortgage Balance:</string>
+    <!--    <string name="payment">Payment:</string>-->
+    <string name="_2nd_mortgage_bal">2nd Mortgage Bal:</string>
+    <string name="_2nd_mortgage_pmt">2nd Mortgage Pmt:</string>
+    <string name="closing_cost_0">Closing Cost 0%</string>
+    <string name="refinance_amount">Refinance Amount:</string>
+    <string name="refinance_payment">Refinance Payment:</string>
+    <string name="increase_payment">Increase Payment:</string>
+
+
+    <string name="welcome_amir_rehman">Welcome, <b>Amir Rehman </b></string>
+    <string name="daily_check_in">Daily Check in</string>
+    <string name="monthly_targets">Monthly Targets</string>
+    <string name="date">25 AUG 2020 01:00AM</string>
+    <string name="sales_revenue">Sales Revenue</string>
+    <string name="visits">Visits</string>
+    <string name="target">Target</string>
+    <string name="achieved">Achieved</string>
+    <string name="todays_task">TODAY\'S TASKS</string>
+    <string name="filter">FILTER</string>
+    <string name="search">Search by Client, Doctor</string>
+    <string name="nicolas_llc_clinic">\'Nicolas LLC Clinic\'</string>
+    <string name="person">Dr. Floyd Cronin</string>
+    <string name="location">JAFZA Z-1, Dubai</string>
+    <string name="pending">pending</string>
+    <string name="complete">complete</string>
+    <string name="completed">completed</string>
+    <string name="made_order">Made Order</string>
+    <string name="corporate">Corporate</string>
+    <string name="step1">Step 01: General Information</string>
+    <string name="step2">Step 02: General Information</string>
+    <string name="step12">Step 01/02</string>
+    <string name="description">Together we can build a strong community of people who care about creating great user experience.</string>
+    <string name="company_name">Company Name</string>
+    <string name="Burjeel_Specialty_Hospital">Burjeel Specialty Hospital</string>
+    <string name="Person_name">Person name</string>
+    <string name="Dr_Sanket_Shukla">Dr. Sanket Shukla</string>
+    <string name="date_time"><![CDATA[Date & Time]]></string>
+    <string name="hint_may_5_2020_10_30_am">May 5, 2020 @ 10:30 AM</string>
+    <string name="abu_hail">Abu Hail</string>
+    <string name="sharjah">Sharjah</string>
+    <string name="topic_of_visit">Topic of Visit</string>
+    <string name="e_g_new_medicine">e.g. New Medicine</string>
+    <string name="sample">Sample</string>
+    <string name="yes">Yes</string>
+    <string name="product_name">Product name</string>
+    <string name="quantity">Quantity</string>
+    <string name="add_more_products">+ ADD MORE PRODUCTS</string>
+    <string name="top_bar_text_back">Task Details</string>
+    <string name="previous">Previous</string>
+    <string name="next_step">Next Step</string>
+    <string name="complete_process">Complete Process</string>
+    <string name="step_02_02">Step 02/02</string>
+    <string name="doctors_response">Doctors Response</string>
+    <string name="potential_pharmacies">Potential Pharmacies</string>
+    <string name="comma_separated_values">comma separated values</string>
+    <string name="upload_card">Upload Card</string>
+    <string name="cancel">Cancel</string>
+    <string name="reason">Reason</string>
+    <string name="comments">Comments</string>
+    <string name="enter_comments">Enter comments</string>
+    <string name="clients">CLIENTS</string>
+    <string name="al_forsan_health_clinic">Al Forsan Health Clinic</string>
+    <string name="person_name">Person name</string>
+    <string name="created_by">Created by</string>
+    <string name="carole_bates">Carole Bates</string>
+    <string name="created_date">Created Date</string>
+    <string name="may_5_2020_at_10_30_am">May 5, 2020 at 10:30 AM</string>
+    <string name="dr_maeen_al_khateeb">Dr. Maeen Al Khateeb</string>
+    <string name="jafza_z_1">JAFZA Z-1</string>
+    <string name="city">City</string>
+    <string name="dubai">Dubai</string>
+    <string name="area">Area</string>
+    <string name="start_process">Start Process</string>
+    <string name="hudson_mertz_and_hodkiewicz_cli">Hudson, Mertz and Hodkiewicz</string>
+    <string name="details">Details</string>
+    <string name="edit">Edit</string>
+    <string name="create_new_task">Create New Task</string>
+    <string name="hudson_mertz_and_hodkiewicz_clinic">Hudson, Mertz and Hodkiewicz Clinic</string>
+    <string name="dr_tamia_shields_dds">Dr. Tamia Shields DDS</string>
+    <string name="contact">(588) 672-2920</string>
+    <string name="visit_history">Visit History</string>
+    <string name="pupose">Pupose</string>
+    <string name="datetxt">Date</string>
+    <string name="status">Status</string>
+    <string name="medicine">Medicine</string>
+    <string name="welcome">Welcome,</string>
+    <string-array name="items_spinner_step2">
+        <item>Corporative</item>
+        <item>Made Order</item>
+        <item>Indifferent</item>
+        <item>Resistent</item>
+    </string-array>
+    <string name="home">Home</string>
+    <string name="My_Tasks">My Tasks</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Clients">Clients</string>
+    <string name="My_Account">My Account</string>
+    <string name="log_out">Log out</string>
+    <string name="aamir_rehman">Aamir Rehman</string>
+    <string name="salesman_app">Salesman App</string>
+    <string name="copyright_2020_all_rights_reserved">Copyright © 2020. All rights reserved</string>
+    <string name="no">No</string>
+    <string name="are_you_sure_you_want_to_skip_this_task">Are you sure you want to skip this task</string>
+    <string name="start_visit_question">Are you sure you want to start this visit?</string>
+    <string name="skip_this_task">Skip this task?</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_reason">Enter reason</string>
+    <string name="enter_a_reason_for_skipping_task">Enter a reason for skipping task</string>
+    <string name="start_visit">Start Visit</string>
+    <string name="task_completed_successfully">Task completed successfully</string>
+    <string name="timer">00:00</string>
+    <string name="active">Active</string>
+    <string name="toggle">Toggle</string>
+    <string name="toggle_check_in_out">Check In Check out</string>
+    <string name="note_switch_off_to_resume_work">Note: Switch off to resume work.</string>
+    <string name="redirecting_you_to_home_screen_in">Redirecting you to Home screen in</string>
+    <string name="lunch_break">Lunch Break</string>
+    <string-array name="items_home_spinner">
+        <item>Day</item>
+    </string-array>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password_field_is_require">Password Field is Require.</string>
+    <string name="topic_field_is_require">Topic of visit field is Require.</string>
+    <string name="task_details">Task Details</string>
+    <string name="successful_visits">Successful Visits</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="choose_gallery">Pick From Gallery</string>
+    <string name="choose_camera">Take From Camera</string>
+    <string name="err_select_image">Select Image</string>
+    <string name="visit_topic_require">Visit Topic Required</string>
+    <string name="card_require">Card Field Required</string>
+    <string name="switch_start_visit">Switch</string>
+    <string name="task_created_successfully">Task Created Successfully</string>
+    <string name="select_product">Select Product</string>
+    <string name="day">Day</string>
+    <string-array name="items_spinner_reason">
+        <item> Didn\'t have time</item>
+        <item>He is OK with current supplier</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="item_tasks">
+        <item>All Tasks</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
+    <string name="title_activity_exoplayer">ExoplayerActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

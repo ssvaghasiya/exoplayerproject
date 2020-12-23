@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/corporative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.newproject.custom.CTextView
+                style="@style/txt_black_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="1dp"
+                android:text="@string/potential_pharmacies" />
+
+            <com.newproject.custom.CEditTextView
+                android:id="@+id/potentialPharmacies"
+                style="@style/txt_editText_10"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@drawable/shape7"
+                android:hint="@string/comma_separated_values"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCorporative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <com.newproject.custom.CButtonViewSB
+            android:id="@+id/btnCorporative"
+            style="@style/txt_dark_blue_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/shape7"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="@string/add_more_products" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.taskdetail.taskdetailstep2.viewmodel.TaskDetailsStep2ViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.taskdetail.taskdetailstep2.viewmodel.TaskDetailsStep2ViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/made_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTaskDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <com.newproject.custom.CButtonViewSB
+            android:id="@+id/btnAddProduct"
+            style="@style/txt_dark_blue_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/shape7"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="@string/add_more_products" />
+    </LinearLayout>
+</layout>

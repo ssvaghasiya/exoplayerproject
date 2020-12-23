@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.taskdetail.taskdetailstep1.viewmodel.TaskDetailsStep1ViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.taskdetail.taskdetailstep1.viewmodel.TaskDetailsStep1ViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"
+        android:orientation="vertical"
+        tools:context=".ui.taskdetail.taskdetailstep1.view.TaskDetailsStep1Activity">
+
+        <include
+            android:id="@+id/topbarback"
+            layout="@layout/top_bar_back_toggle" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llTaskStep1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@drawable/shape5"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp">
+
+                        <com.newproject.custom.CTextViewB
+                            style="@style/txt_white_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/step1" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_6sdp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_arrow" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_weight="2"
+                        android:background="@drawable/shape6"
+                        android:gravity="center"
+                        android:padding="@dimen/_3sdp">
+
+                        <com.newproject.custom.CTextViewB
+                            style="@style/txt_gray_light_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:singleLine="true"
+                            android:text="@string/step2" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_35sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/_6sdp">
+
+                            <com.newproject.custom.CTextViewB
+                                style="@style/txt_000_9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="@dimen/_2sdp"
+                                android:text="@string/step12" />
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="@dimen/_2sdp"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:paddingEnd="@dimen/_2sdp"
+                                android:paddingBottom="@dimen/_8sdp"
+                                android:text="@string/description" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/_5sdp">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/company_name" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtCompanyName"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:background="@drawable/shape7"
+                                android:hint="@string/company_name"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/Person_name" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtPersonName"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:background="@drawable/shape7"
+                                android:hint="@string/Dr_Sanket_Shukla"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.newproject.custom.CTextView
+                                    style="@style/txt_black_8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="1dp"
+                                    android:text="@string/area" />
+
+                                <com.newproject.custom.CEditTextView
+                                    android:id="@+id/txtArea"
+                                    style="@style/txt_editText_10"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:enabled="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:background="@drawable/shape7"
+                                    android:hint="@string/abu_hail"
+                                    android:inputType="text" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.newproject.custom.CTextView
+                                    style="@style/txt_black_8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="1dp"
+                                    android:text="@string/city" />
+
+                                <com.newproject.custom.CEditTextView
+                                    android:id="@+id/txtCity"
+                                    style="@style/txt_editText_10"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@drawable/shape7"
+                                    android:hint="@string/sharjah"
+                                    android:enabled="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:inputType="text" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/date_time" />
+
+                            <com.newproject.custom.CTextView
+                                android:id="@+id/txtDateTime"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:drawableRight="@drawable/ic_icon_feather_calendar"
+                                android:onClick="@{(v)->viewClickHandler.onDatePicker(v)}"
+                                android:hint="@string/hint_may_5_2020_10_30_am" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/topic_of_visit" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtTopicOfVisit"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:hint="@string/e_g_new_medicine"
+                                android:inputType="text" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/sample" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.newproject.custom.CButtonViewB
+                                    android:id="@+id/btnNo"
+                                    style="@style/txt_dark_blue_9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:background="@drawable/shape9"
+                                    android:onClick="@{(v)->viewClickHandler.onNo(v)}"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/no" />
+
+                                <com.newproject.custom.CButtonViewB
+                                    android:id="@+id/btnYes"
+                                    style="@style/txt_dark_blue_9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:background="@drawable/shape8"
+                                    android:onClick="@{(v)->viewClickHandler.onYes(v)}"
+                                    android:padding="@dimen/_5sdp"
+                                    android:text="@string/yes" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+<!--                        <com.crm.custom.CButtonViewB-->
+<!--                            style="@style/txt_dark_blue_9"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="end"-->
+<!--                            android:layout_marginTop="@dimen/_3sdp"-->
+<!--                            android:layout_marginBottom="@dimen/_3sdp"-->
+<!--                            android:background="@drawable/shape8"-->
+<!--                            android:padding="@dimen/_5sdp"-->
+<!--                            android:onClick="@{(v)->viewClickHandler.onNextStep(v)}"-->
+<!--                            android:text="@string/next_step" />-->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/_5sdp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+<!--            <com.crm.custom.CButtonView-->
+<!--                style="@style/txt_blue_8"-->
+<!--                android:layout_width="@dimen/_60sdp"-->
+<!--                android:layout_height="@dimen/_22sdp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginStart="@dimen/_3sdp"-->
+<!--                android:background="@drawable/shape11"-->
+<!--                android:onClick="@{(v)->viewClickHandler.onPreviousClick(v)}"-->
+<!--                android:text="@string/previous"-->
+<!--                android:textAllCaps="false" />-->
+
+
+            <com.newproject.custom.CButtonView
+                style="@style/txt_white_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/shape10"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:onClick="@{(v)->viewClickHandler.onNextStep(v)}"
+                android:text="@string/next_step"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

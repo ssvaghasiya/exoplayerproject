@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="dp1">@dimen/_1sdp</dimen>
+    <dimen name="dp2">@dimen/_2sdp</dimen>
+    <dimen name="dp3">@dimen/_3sdp</dimen>
+    <dimen name="dp4">@dimen/_4sdp</dimen>
+    <dimen name="dp5">@dimen/_5sdp</dimen>
+    <dimen name="dp6">@dimen/_6sdp</dimen>
+    <dimen name="dp7">@dimen/_7sdp</dimen>
+    <dimen name="dp8">@dimen/_8sdp</dimen>
+    <dimen name="dp10">@dimen/_10sdp</dimen>
+    <dimen name="dp12">@dimen/_12sdp</dimen>
+    <dimen name="dp13">@dimen/_13sdp</dimen>
+    <dimen name="dp14">@dimen/_14sdp</dimen>
+    <dimen name="dp15">@dimen/_15sdp</dimen>
+    <dimen name="dp16">@dimen/_16sdp</dimen>
+    <dimen name="dp17">@dimen/_17sdp</dimen>
+    <dimen name="dp18">@dimen/_18sdp</dimen>
+    <dimen name="dp20">@dimen/_20sdp</dimen>
+    <dimen name="dp22">@dimen/_22sdp</dimen>
+    <dimen name="dp25">@dimen/_25sdp</dimen>
+    <dimen name="dp28">@dimen/_28sdp</dimen>
+    <dimen name="dp30">@dimen/_30sdp</dimen>
+    <dimen name="dp33">@dimen/_33sdp</dimen>
+    <dimen name="dp35">@dimen/_35sdp</dimen>
+    <dimen name="dp38">@dimen/_38sdp</dimen>
+    <dimen name="dp40">@dimen/_40sdp</dimen>
+    <dimen name="dp45">@dimen/_45sdp</dimen>
+    <dimen name="dp50">@dimen/_50sdp</dimen>
+    <dimen name="dp55">@dimen/_55sdp</dimen>
+    <dimen name="dp60">@dimen/_60sdp</dimen>
+    <dimen name="dp70">@dimen/_70sdp</dimen>
+    <dimen name="dp75">@dimen/_75sdp</dimen>
+    <dimen name="dp80">@dimen/_80sdp</dimen>
+    <dimen name="dp85">@dimen/_85sdp</dimen>
+    <dimen name="dp90">@dimen/_90sdp</dimen>
+    <dimen name="dp100">@dimen/_100sdp</dimen>
+    <dimen name="dp120">@dimen/_120sdp</dimen>
+    <dimen name="dp130">@dimen/_130sdp</dimen>
+    <dimen name="dp150">@dimen/_150sdp</dimen>
+    <dimen name="dp170">@dimen/_170sdp</dimen>
+    <dimen name="dp200">@dimen/_200sdp</dimen>
+    <dimen name="dp300">@dimen/_300sdp</dimen>
+
+    <dimen name="sp35">35sp</dimen>
+    <dimen name="sp33">33sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <dimen name="sp39">39sp</dimen>
+    <dimen name="eligibility_circle_text_size">32sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp25">25sp</dimen>
+    <dimen name="sp32">32sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp9">9sp</dimen>
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="sp7">7sp</dimen>
+
+    <dimen name="btn_sp16">16sp</dimen>
+
+    <dimen name="pager_margin">12dp</dimen>
+    <dimen name="divider_line_height">1dp</dimen>
+    <item name="letter_spacing" format="float" type="integer">0.10</item>
+    <item name="letter_spacing_" format="float" type="integer">0.01</item>
+
+    <dimen name="eligible_card_side_margin">@dimen/_10sdp</dimen>
+    <dimen name="eligible_card_side_padding">@dimen/_28sdp</dimen>
+
+    <dimen name="btn_pre_bottom_padding">@dimen/_5sdp</dimen>
+
+    <dimen name="stack_view_height">@dimen/_170sdp</dimen>
+    <dimen name="cross_btn_size">@dimen/_55sdp</dimen>
+
+    <dimen name="sliding_card_view_pager_height">@dimen/_150sdp</dimen>
+    <dimen name="btn_height">70dp</dimen>
+    <dimen name="spin_padding">6dp</dimen>
+    <dimen name="spin_width">4dp</dimen>
+    <dimen name="btn_elevation">15dp</dimen>
+    <dimen name="btn_elevation_z">5dp</dimen>
+    <dimen name="btn_start_margin">30dp</dimen>
+    <dimen name="btn_end_margin">30dp</dimen>
+    <dimen name="btn_corner">15dp</dimen>
+    <dimen name="width_cardtype">80dp</dimen>
+    <dimen name="height_cardtype">50dp</dimen>
+    <dimen name="card_height">78dp</dimen>
+    <dimen name="height_no_loan">@dimen/_200sdp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.createnewtask.viewmodel.CreateNewTaskViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.createnewtask.viewmodel.CreateNewTaskViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".ui.createnewtask.view.CreateNewTaskActivity">
+
+                <include
+                    android:id="@+id/topbarback"
+                    layout="@layout/top_bar_back" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_35sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/_5sdp">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/company_name" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtCompanyName"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_200sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/company_name"
+                                android:inputType="text" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/Person_name" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtPersonName"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="@string/Dr_Sanket_Shukla"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.newproject.custom.CTextView
+                                    style="@style/txt_black_8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="1dp"
+                                    android:text="@string/area" />
+
+                                <com.newproject.custom.CEditTextView
+                                    android:id="@+id/txtArea"
+                                    style="@style/txt_editText_10"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@drawable/shape7"
+                                    android:enabled="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="@string/abu_hail"
+                                    android:inputType="text" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.newproject.custom.CTextView
+                                    style="@style/txt_black_8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="1dp"
+                                    android:text="@string/city" />
+
+                                <com.newproject.custom.CEditTextView
+                                    android:id="@+id/txtCity"
+                                    style="@style/txt_editText_10"
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:background="@drawable/shape7"
+                                    android:enabled="false"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="@string/sharjah"
+                                    android:inputType="text" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/date_time" />
+
+                            <com.newproject.custom.CTextView
+                                android:id="@+id/txtDateTime"
+                                style="@style/txt_extra_black_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:drawableRight="@drawable/ic_icon_feather_calendar"
+                                android:hint="@string/hint_may_5_2020_10_30_am"
+                                android:onClick="@{(v)->viewClickHandler.onDatePicker(v)}"
+                                android:padding="@dimen/_5sdp" />
+
+                            <LinearLayout
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_7sdp"
+                                android:background="@drawable/shape7"
+                                android:onClick="@{(v)->viewClickHandler.onCardSelect(v)}">
+
+                                <!--                                <ImageView-->
+                                <!--                                    android:id="@+id/txtCard"-->
+                                <!--                                    style="@style/txt_extra_black_10"-->
+                                <!--                                    android:layout_width="0dp"-->
+                                <!--                                    android:layout_height="@dimen/_23sdp"-->
+                                <!--                                    android:layout_gravity="center_vertical"-->
+                                <!--                                    android:layout_weight="1"-->
+                                <!--                                    android:hint="@string/upload_card"-->
+                                <!--                                    android:padding="@dimen/_5sdp"-->
+                                <!--                                     />-->
+
+                                <FrameLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_weight="1">
+
+                                    <ImageView
+                                        android:id="@+id/imgCard"
+                                        style="@style/txt_extra_black_10"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_23sdp"
+                                        android:layout_gravity="center_vertical"
+                                        android:hint="@string/upload_card"
+                                        android:padding="@dimen/_5sdp" />
+
+                                    <com.newproject.custom.CTextView
+                                        android:id="@+id/txtUploadCard"
+                                        style="@style/txt_extra_black_10"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/upload_card"
+                                        android:padding="@dimen/_5sdp"
+                                        android:singleLine="true"
+                                        android:visibility="visible"/>
+                                </FrameLayout>
+
+                                <ImageView
+                                    style="@style/txt_extra_black_10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_23sdp"
+                                    android:layout_gravity="center_vertical"
+                                    android:padding="@dimen/_5sdp"
+                                    android:src="@drawable/ic_icon_feather_camera" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.newproject.custom.CTextView
+                                style="@style/txt_black_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:text="@string/topic_of_visit" />
+
+                            <com.newproject.custom.CEditTextView
+                                android:id="@+id/txtTopicOfVisit"
+                                style="@style/txt_editText_10"
+                                android:layout_width="@dimen/_150sdp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/shape7"
+                                android:hint="@string/e_g_new_medicine"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <com.newproject.custom.CButtonView
+                style="@style/txt_blue_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shape11"
+                android:onClick="@{(v)->viewClickHandler.onCancle(v)}"
+                android:text="@string/cancel"
+                android:textAllCaps="false" />
+
+
+            <com.newproject.custom.CButtonView
+                style="@style/txt_white_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/shape10"
+                android:onClick="@{(v)->viewClickHandler.onCreateNewTask(v)}"
+                android:text="@string/create_new_task"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

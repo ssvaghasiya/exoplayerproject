@@ -1,0 +1,1022 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+
+    <style name="MyAlertDialogStyle" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/primary</item>
+
+        <!--        <item name="colorPrimaryDark">@color/primaryDark</item>-->
+        <!--        <item name="colorAccent">@color/primary</item>-->
+        <!--        <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>-->
+        <!--        <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>-->
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">@color/accent</item>
+<!--        <item name="android:windowDisablePreview">true</item>-->
+    </style>
+
+    <style name="DialogStyle" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+<!--        <item name="android:windowDisablePreview">true</item>-->
+    </style>
+
+    <style name="AppThemeDefault" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <!--        <item name="android:windowDisablePreview">true</item>-->
+    </style>
+
+    <style name="FullTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Toolbar" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+
+    </style>
+
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="AppTheme" />
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+
+    <style name="txt_fff_35">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/sp35</item>
+    </style>
+
+    <style name="txt_fff_22">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_fff_18">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_fff_20">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_fff_25">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_fff_10">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+
+    <style name="txt_fff_16">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_fff_30">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp30</item>
+    </style>
+
+    <style name="txt_fff_12">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="txt_btn_fff_16">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/btn_sp16</item>
+    </style>
+
+    <style name="txt_fff_14">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_fff_13">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp13</item>
+    </style>
+
+
+<!--    <style name="txt_fff_12">-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textSize">@dimen/sp12</item>-->
+<!--    </style>-->
+
+    <style name="txt_fff_11">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+<!--    <style name="txt_fff_10">-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textSize">@dimen/sp10</item>-->
+<!--    </style>-->
+
+    <style name="txt_fff_9">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp9</item>
+    </style>
+
+    <style name="txt_fff_8">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp8</item>
+    </style>
+
+    <style name="txt_fff_7">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp7</item>
+    </style>
+
+    <style name="txt_gray_sales_18">
+        <item name="android:textColor">@color/graysalesmenText</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_gray_sales_7">
+        <item name="android:textColor">@color/graysalesmenText</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_gray_sales_24">
+        <item name="android:textColor">@color/graysalesmenText</item>
+        <item name="android:textSize">@dimen/sp24</item>
+    </style>
+
+    <style name="txt_gray_sales_9">
+        <item name="android:textColor">@color/graysalesmenText</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_gray_sales_22">
+        <item name="android:textColor">@color/graysalesmenText</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_333_14">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_333_12">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_primary_13">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="EditTextHint" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="colorAccent">@color/primary_white</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="colorControlNormal">@color/primary_white</item>
+        <item name="android:textColor">@color/edit_text_color_focused</item>
+        <item name="colorControlActivated">@color/edit_text_color_focused</item>
+        <item name="colorControlHighlight">@color/edit_text_color_focused</item>
+    </style>
+
+    <style name="EditTextHintError" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="colorAccent">@color/primary_white</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:textColor">@color/error_bg</item>
+        <item name="colorControlNormal">@color/primary_white</item>
+        <item name="colorControlActivated">@color/error_bg</item>
+        <item name="colorControlHighlight">@color/error_bg</item>
+    </style>
+
+    <style name="EditTextHintWhite" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="colorAccent">@color/primary_white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="colorControlNormal">@color/primary_white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+    </style>
+
+    <style name="txt_333_18">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_333_16">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_333_20">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_333_22">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_333_24">
+        <item name="android:textColor">@color/editColor</item>
+        <item name="android:textSize">@dimen/sp24</item>
+    </style>
+
+    <style name="txt_light_header_16">
+        <item name="android:textColor">@color/light_header</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_light_header_14">
+        <item name="android:textColor">@color/light_header</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_111_22">
+        <item name="android:textColor">@color/greenLight</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_111_8">
+        <item name="android:textColor">@color/greenLight</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_111_25">
+        <item name="android:textColor">@color/greenLight</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_111_10">
+        <item name="android:textColor">@color/greenLight</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="txt_222_22">
+        <item name="android:textColor">@color/blue1</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_222_8">
+        <item name="android:textColor">@color/blue1</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_222_25">
+        <item name="android:textColor">@color/blue1</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_222_10">
+        <item name="android:textColor">@color/blue1</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="txt_444_22">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_444_8">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_444_25">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_444_10">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="txt_666_20">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+
+    <style name="txt_666_18">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_666_16">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_666_14">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_666_12">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_666_13">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp13</item>
+    </style>
+
+    <style name="txt_666_11">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/sp11</item>
+    </style>
+
+    <style name="txt_666_8">
+        <item name="android:textColor">@color/grayClr</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_999_11">
+        <item name="android:textColor">@color/col_999</item>
+        <item name="android:textSize">@dimen/sp11</item>
+    </style>
+
+    <style name="txt_999_12">
+        <item name="android:textColor">@color/col_999</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_999_14">
+        <item name="android:textColor">@color/col_999</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_999_16">
+        <item name="android:textColor">@color/col_999</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_red_22">
+        <item name="android:textColor">@color/error_bg</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_darkOrange_10">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp10</item>
+    </style>
+
+    <style name="txt_darkOrange_12">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_darkOrange_13">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp13</item>
+    </style>
+
+    <style name="txt_darkOrange_14">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_darkOrange_16">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_darkOrange_18">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_darkOrange_20">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_darkOrange_22">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_darkOrange_25">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_darkOrange_30">
+        <item name="android:textColor">@color/dark_orange</item>
+        <item name="android:textSize">@dimen/sp30</item>
+    </style>
+
+
+    <style name="txt_000_18">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+<!--    <style name="txt_000_7">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp18</item>-->
+<!--    </style>-->
+
+    <style name="txt_000_20">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_000_8">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_000_25">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+
+<!--    <style name="txt_000_10">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp25</item>-->
+<!--    </style>-->
+
+    <style name="txt_000_32">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp32</item>
+    </style>
+
+    <style name="txt_000_12">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="txt_000_13">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="txt_000_15">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+
+    <style name="txt_white_18">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_l_blue_18">
+        <item name="android:textColor">@color/lblue</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_l_blue_20">
+        <item name="android:textColor">@color/lblue</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_000_9">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_000_24">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp24</item>
+    </style>
+
+    <style name="txt_000_33">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp33</item>
+    </style>
+
+    <style name="txt_000_30">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp30</item>
+    </style>
+
+    <style name="txt_000_39">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp39</item>
+    </style>
+
+    <style name="txt_000_7">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+<!--    <style name="txt_000_14">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp14</item>-->
+<!--    </style>-->
+
+    <style name="txt_000_14">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+<!--    <style name="txt_000_13">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp13</item>-->
+<!--    </style>-->
+
+<!--    <style name="txt_000_12">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp12</item>-->
+<!--    </style>-->
+
+    <style name="txt_000_11">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="txt_000_10">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+<!--    <style name="txt_000_9">-->
+<!--        <item name="android:textColor">@color/black</item>-->
+<!--        <item name="android:textSize">@dimen/sp9</item>-->
+<!--    </style>-->
+
+    <style name="txt_darkLightBlue_20">
+        <item name="android:textColor">@color/darkLightblue</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_darkLightBlue_18">
+        <item name="android:textColor">@color/darkLightblue</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_darkLightBlue_7">
+        <item name="android:textColor">@color/darkLightblue</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_555_9">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_gray_light_22">
+        <item name="android:textColor">@color/grayL</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_gray_light_9">
+        <item name="android:textColor">@color/grayL</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_dark_Blue_22">
+        <item name="android:textColor">@color/darkBlue</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_555_18">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_gray_18">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_gray_7">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_gray_8">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_gray_22">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_gray_16">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_gray_6">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/_6ssp</item>
+    </style>
+
+    <style name="txt_gray_20">
+        <item name="android:textColor">#808080</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+
+    <style name="txt_555_20">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_blue_18">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/sp18</item>
+    </style>
+
+    <style name="txt_blue_12">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_blue_13">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/sp13</item>
+    </style>
+
+    <style name="txt_blue_14">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_blue_16">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_green_16">
+        <item name="android:textColor">@color/common_green</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_green_15">
+        <item name="android:textColor">@color/common_green</item>
+        <item name="android:textSize">@dimen/sp15</item>
+    </style>
+
+    <style name="txt_orange_8">
+        <item name="android:textColor">@color/orange_light1</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_orange_20">
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_orange_22">
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_orange_16">
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_orange_14">
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_orange_12">
+        <item name="android:textColor">@color/orange_light</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="txt_darkLightOrange_14">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_light_blue_7">
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_darkLightOrange_15">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp15</item>
+    </style>
+
+    <style name="txt_darkLightOrange_16">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_darkLightOrange_7">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_darkLightOrange_20">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_darkLightOrange_22">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_darkLightOrange_25">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp25</item>
+    </style>
+
+    <style name="txt_darkLightOrange_30">
+        <item name="android:textColor">@color/orange_dark</item>
+        <item name="android:textSize">@dimen/sp30</item>
+    </style>
+
+    <style name="txt_white_22">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_white_9">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_white_20">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_white_8">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+
+    <style name="txt_c2c_12">
+        <item name="android:textColor">#c2c2c2</item>
+        <item name="android:textSize">@dimen/sp12</item>
+    </style>
+
+    <style name="btnStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="txt_text_primary_20">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_9b9_14">
+        <item name="android:textColor">@color/divider_gray</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_black_20">
+        <item name="android:textColor">@color/blacklight</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_black_8">
+        <item name="android:textColor">@color/blacklight</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_black_10">
+        <item name="android:textColor">@color/blacklight</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+
+    <style name="txt_blue_20">
+        <item name="android:textColor">@color/blueedit</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+    <style name="txt_blue_8">
+        <item name="android:textColor">@color/blueedit</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_black_7">
+        <item name="android:textColor">@color/blacklight</item>
+        <item name="android:textSize">@dimen/_7ssp</item>
+    </style>
+
+    <style name="txt_dark_blue_24">
+        <item name="android:textColor">@color/darkblue</item>
+        <item name="android:textSize">@dimen/sp24</item>
+    </style>
+
+    <style name="txt_dark_blue_9">
+        <item name="android:textColor">@color/darkblue</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_dark_blue_22_">
+        <item name="android:textColor">@color/darkblue</item>
+        <item name="android:textSize">@dimen/sp22</item>
+    </style>
+
+    <style name="txt_dark_blue_8">
+        <item name="android:textColor">@color/darkblue</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="txt_editText">
+        <item name="android:textColor">@color/blackex</item>
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+    </style>
+
+    <style name="txt_editText_10">
+        <item name="android:textColor">@color/blackex</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+    </style>
+
+    <style name="txt_editText_login_10">
+        <item name="android:textColor">@color/blackex</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_6sdp</item>
+        <item name="android:paddingTop">@dimen/_7sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+    </style>
+
+    <style name="txt_extra_black_10">
+        <item name="android:textColor">@color/blackex</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="txt_text_10">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="txt_text_9">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_text_20">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp20</item>
+    </style>
+
+
+    <style name="service_heading_14">
+        <item name="android:textColor">#01335b</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="profile_text_14">
+        <item name="android:textColor">#01335b</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="simple_text">
+        <item name="android:textColor">#4B4B4B</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="text_4b4_14">
+        <item name="android:textColor">#4B4B4B</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="edit_14">
+        <item name="android:textColor">#1293BF</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="txt_light_gray">
+        <item name="android:textColor">@color/gray_drop_down</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+    <style name="txt_card_expired">
+        <item name="android:textColor">@color/card_bg</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="txt_theme_14">
+
+        <item name="android:textColor">@color/primary</item>
+
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="txt_expired">
+        <item name="android:textColor">@color/error_bg</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="btn">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/btn_sp16</item>
+        <item name="android:elevation">15dp</item>
+        <item name="android:translationZ">5dp</item>
+        <item name="android:letterSpacing">@integer/letter_spacing</item>
+    </style>
+
+    <style name="SeekbarSimple" parent="Widget.AppCompat.SeekBar">
+        <item name="android:layout_height">@dimen/_10sdp</item>
+        <item name="android:progressTint">@color/gold</item>
+        <item name="android:thumbTint">@color/gold</item>
+        <item name="android:secondaryProgressTint">@color/greyLight1</item>
+        <item name="android:progressBackgroundTint">@color/greyLight1</item>
+    </style>
+
+    <style name="AppTheme.GreenAccent">
+        <item name="colorAccent">@color/greenLight</item>
+    </style>
+
+    <style name="AppTheme.Blue1Accent">
+        <item name="colorAccent">@color/blue1</item>
+    </style>
+
+    <style name="AppTheme.Blue2Accent">
+        <item name="colorAccent">@color/blue2</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+</resources>
