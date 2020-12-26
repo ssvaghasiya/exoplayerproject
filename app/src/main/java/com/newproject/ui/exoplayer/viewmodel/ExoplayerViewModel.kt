@@ -49,6 +49,7 @@ class ExoplayerViewModel(application: Application) : BaseViewModel(application) 
     lateinit var bt_fullscreen: ImageView
     lateinit var bt_mute: ImageView
     private var mFullScreenDialog: Dialog? = null
+    lateinit var videoUrl: String
 
     fun setBinder(
         binder: ActivityExoplayerBinding
@@ -66,6 +67,8 @@ class ExoplayerViewModel(application: Application) : BaseViewModel(application) 
     fun init() {
         bt_fullscreen = (mContext as Activity).findViewById(R.id.bt_fullscreen)
         bt_mute = (mContext as Activity).findViewById(R.id.bt_mute)
+        videoUrl = (mContext as Activity).intent.getStringExtra("videoUrl")!!
+        setupVideoPlayer()
     }
 
 
@@ -74,9 +77,9 @@ class ExoplayerViewModel(application: Application) : BaseViewModel(application) 
             isVideo = true
             binder.ivDetailPlayVideo.visibility = View.GONE
             binder.playerView.visibility = View.VISIBLE
-            val videoUrl =
-                Uri.parse("https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4")
-//            val videoUrl = Uri.parse(videoPath)
+//            val videoUrl =
+//                Uri.parse("https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4")
+            val videoUrl = Uri.parse(videoUrl)
             val loadControl: LoadControl = DefaultLoadControl()
             val bandwidthMeter: BandwidthMeter = DefaultBandwidthMeter()
             val trackSelector: TrackSelector =

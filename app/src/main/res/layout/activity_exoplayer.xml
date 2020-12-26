@@ -54,6 +54,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:background="#80000000"
+                            android:visibility="invisible"
                             android:onClick="@{(v)->viewClickHandler.onPlay(v)}"
                             android:padding="@dimen/_40sdp"
                             android:src="@drawable/play_button" />
@@ -67,7 +68,7 @@
                             app:rewind_increment="10000"
                             app:fastforward_increment="10000"
                             app:show_timeout="5000"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             app:use_controller="true"
                             android:background="@color/transparent"
                             app:player_layout_id="@layout/exo_player_view"
@@ -78,7 +79,7 @@
                             android:layout_height="80dp"
                             android:id="@+id/progress_bar"
                             android:layout_gravity="center"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
 
                     </FrameLayout>
 
