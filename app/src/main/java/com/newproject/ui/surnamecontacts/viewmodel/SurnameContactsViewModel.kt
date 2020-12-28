@@ -10,14 +10,16 @@ import com.newproject.databinding.ActivitySurnameContactsBinding
 import com.newproject.interfaces.TopBarClickListener
 import com.newproject.ui.surname.datamodel.SurnameData
 import com.newproject.ui.surname.utils.SurnameAdapter
+import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
+import com.newproject.ui.surnamecontacts.utils.SurnameContactsAdapter
 
 class SurnameContactsViewModel(application: Application) : BaseViewModel(application) {
 
     private lateinit var binder: ActivitySurnameContactsBinding
     private lateinit var mContext: Context
-    lateinit var adapter: SurnameAdapter
+    lateinit var adapter: SurnameContactsAdapter
 
-    var dataList: MutableList<SurnameData> = mutableListOf()
+    var dataList: MutableList<SurnameContactsData> = mutableListOf()
 
     fun setBinder(binder: ActivitySurnameContactsBinding) {
         this.binder = binder
@@ -31,14 +33,19 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
 
     private fun init() {
         dataList.clear()
-        dataList.add(SurnameData( "Hello"))
-        dataList.add(SurnameData( "Hello"))
-        dataList.add(SurnameData("Hello"))
-        adapter = SurnameAdapter(mContext)
+        dataList.add(SurnameContactsData( 1,"name","7894561235"))
+        dataList.add(SurnameContactsData( 2,"name","7894561235"))
+        dataList.add(SurnameContactsData( 3,"name","7894561235"))
+        dataList.add(SurnameContactsData( 4,"name","7894561235"))
+        dataList.add(SurnameContactsData( 5,"name","7894561235"))
+        dataList.add(SurnameContactsData( 6,"name","7894561235"))
+        dataList.add(SurnameContactsData( 7,"name","7894561235"))
+
+        adapter = SurnameContactsAdapter(mContext)
         binder.rvSurname.adapter = adapter
         adapter.addAll(dataList)
-        adapter.setEventListener(object : SurnameAdapter.EventListener {
-            override fun onItemClick(pos: Int, item: SurnameData) {
+        adapter.setEventListener(object : SurnameContactsAdapter.EventListener {
+            override fun onItemClick(pos: Int, item: SurnameContactsData) {
 
             }
         })

@@ -12,6 +12,7 @@ import com.newproject.interfaces.TopBarClickListener
 import com.newproject.ui.exoplayer.view.ExoplayerActivity
 import com.newproject.ui.surname.datamodel.SurnameData
 import com.newproject.ui.surname.utils.SurnameAdapter
+import com.newproject.ui.surnamecontacts.view.SurnameContactsActivity
 
 class SurnameViewModel(application: Application) : BaseViewModel(application) {
 
@@ -41,7 +42,8 @@ class SurnameViewModel(application: Application) : BaseViewModel(application) {
         adapter.addAll(dataList)
         adapter.setEventListener(object : SurnameAdapter.EventListener {
             override fun onItemClick(pos: Int, item: SurnameData) {
-               
+                var intent = Intent(mContext, SurnameContactsActivity::class.java)
+                mContext.startActivity(intent)
             }
         })
 

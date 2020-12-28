@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.newproject.R
 import com.newproject.databinding.ItemContactsBinding
 import com.newproject.databinding.ItemSurnameBinding
-import com.newproject.ui.surname.datamodel.SurnameData
 import com.newproject.ui.surname.utils.SurnameAdapter
+import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
 
 class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyViewHolder>() {
 
     private lateinit var mEventListener: EventListener
 
-    private var data = mutableListOf<SurnameData>()
+    private var data = mutableListOf<SurnameContactsData>()
     lateinit var context: Context
 
 
@@ -30,7 +30,7 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
 
 
     interface EventListener {
-        fun onItemClick(pos: Int, item: SurnameData)
+        fun onItemClick(pos: Int, item: SurnameContactsData)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -48,7 +48,7 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
 
     }
 
-    fun getItem(p: Int): SurnameData {
+    fun getItem(p: Int): SurnameContactsData {
         return data[p]
 
     }
@@ -57,7 +57,9 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
         val item = getItem(position)
         try {
 
-//            holder.itemBinding.surnameFamily.text = item.text
+            holder.itemBinding.txtIndex.text = item.index.toString()+"."
+            holder.itemBinding.txtPersonNamee.text = item.name
+            holder.itemBinding.txtNumber.text = item.number
 
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
@@ -69,7 +71,7 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
 
     }
 
-    fun addAll(mData: List<SurnameData>?) {
+    fun addAll(mData: List<SurnameContactsData>?) {
         data.clear()
         data.addAll(mData!!)
         notifyDataSetChanged()
