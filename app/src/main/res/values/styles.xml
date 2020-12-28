@@ -1019,4 +1019,27 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style name="NavigationDrawerStyle">
+
+        <item name="android:textSize">20sp</item><!-- text size in menu-->
+
+        <!-- item size in menu-->
+        <item name="android:listPreferredItemHeightSmall">70dp</item>
+        <item name="listPreferredItemHeightSmall">70dp</item>
+
+        <!-- item padding left in menu-->
+        <item name="android:listPreferredItemPaddingLeft">8dp</item>
+        <item name="listPreferredItemPaddingLeft">8dp</item>
+
+        <!-- item padding right in menu-->
+        <item name="android:listPreferredItemPaddingRight">8dp</item>
+        <item name="listPreferredItemPaddingRight">8dp</item>
+    </style>
+
+    <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+<!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
 </resources>

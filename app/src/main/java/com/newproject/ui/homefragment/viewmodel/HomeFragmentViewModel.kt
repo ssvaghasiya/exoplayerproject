@@ -28,10 +28,13 @@ import com.google.android.material.tabs.TabLayout
 import com.newproject.R
 import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.FragmentHomeBinding
+import com.newproject.ui.gallery.view.GalleryActivity
 import com.newproject.ui.homefragment.utils.GridDecore
 import com.newproject.ui.homefragment.utils.HomeAdapter
 import com.newproject.ui.homefragment.utils.HomeData
 import com.newproject.ui.homefragment.view.HomeFragment
+import com.newproject.ui.surname.view.SurnameActivity
+import com.newproject.ui.surname.viewmodel.SurnameViewModel
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageClickListener
 import com.synnapps.carouselview.ImageListener
@@ -62,10 +65,10 @@ class HomeFragmentViewModel(application: Application) : BaseViewModel(applicatio
 
     private fun init() {
         dataList.clear()
-        dataList.add(HomeData(R.drawable.gallary, "Gallery"))
-        dataList.add(HomeData(R.drawable.users, "Users"))
-        dataList.add(HomeData(R.drawable.ads1, "Advertise"))
-        dataList.add(HomeData(R.drawable.contact1, "Contact"))
+        dataList.add(HomeData(R.drawable.gallary, mContext.getString(R.string.gallery)))
+        dataList.add(HomeData(R.drawable.users, mContext.getString(R.string.users)))
+        dataList.add(HomeData(R.drawable.ads1, mContext.getString(R.string.advertise)))
+        dataList.add(HomeData(R.drawable.contact1, mContext.getString(R.string.contact)))
         adapter = HomeAdapter(mContext)
         adapter.addAll(dataList)
         binder.recyclerViewHome.adapter = adapter
@@ -74,14 +77,13 @@ class HomeFragmentViewModel(application: Application) : BaseViewModel(applicatio
         binder.recyclerViewHome.addItemDecoration(GridDecore())
         adapter.setEventListener(object : HomeAdapter.EventListener {
             override fun onItemClick(pos: Int) {
-//                var intent: Intent
-                when (pos) {
-//                    0 -> intent = Intent(context, GallaryActivity::class.java)
-//                    1 -> intent = Intent(context, FamilyActivity::class.java)
-//                    2 -> intent = Intent(context,AdsActivity::class.java)
-//                    else -> intent = Intent(context, ImpContactsActivity::class.java)
+                if (pos == 0) {
+                    var intent: Intent = Intent(mContext, GalleryActivity::class.java)
+                    mContext.startActivity(intent)
+                } else if(pos == 1){
+                    var intent: Intent = Intent(mContext, SurnameActivity::class.java)
+                    mContext.startActivity(intent)
                 }
-//                mContext.startActivity(intent)
             }
         })
         binder.carouselViewHomefrag.setImageListener(imageListener)

@@ -11,6 +11,7 @@ object LanguageHelper {
 
     var mEnglishFlag = "en"
     var mArabicFlag = "ar"
+    var mGujaratiFlag = "gu"
 
     fun setLocale(context: Context?): Context {
         return updateResources(context!!, getCurrentLanguage(context)!!)
@@ -37,7 +38,7 @@ object LanguageHelper {
     }
 
     fun getLanguage(c: Context): String? {
-        return Utils.getPref(c, Constant.LANGUAGE, "en")
+        return Utils.getPref(c, Constant.LANGUAGE, mGujaratiFlag)
     }
 
     fun getStringByLocal(context: Context, resId: Int, locale: String): String {

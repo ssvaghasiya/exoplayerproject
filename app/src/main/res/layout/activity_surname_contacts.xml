@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.surnamecontacts.viewmodel.SurnameContactsViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.surnamecontacts.viewmodel.SurnameContactsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.surnamecontacts.view.SurnameContactsActivity">
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/topbar" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_contacts"/>
+
+
+    </LinearLayout>
+</layout>

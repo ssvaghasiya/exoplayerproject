@@ -225,6 +225,7 @@ class ExoplayerViewModel(application: Application) : BaseViewModel(application) 
                 R.drawable.ic_baseline_fullscreen_24
             )
         )
+        (mContext as Activity).requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
     }
 
     fun onResume() {

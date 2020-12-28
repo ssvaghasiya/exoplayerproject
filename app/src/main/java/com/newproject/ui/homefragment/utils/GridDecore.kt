@@ -13,8 +13,8 @@ class GridDecore: RecyclerView.ItemDecoration() {
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
-//        outRect.left = 12
-//        outRect.right = 12
+        outRect.left = 60
+        outRect.right = 60
 //        outRect.top = 20
         outRect.bottom = 10
     }

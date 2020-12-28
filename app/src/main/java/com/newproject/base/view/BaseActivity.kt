@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -93,6 +94,18 @@ open class BaseActivity : AppCompatActivity() {
 //
 //        }
 //    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        LanguageHelper.setLocale(this)
+    }
+
+    override fun attachBaseContext(context: Context) {
+        val lang = LanguageHelper.getLanguage(context).toString()
+        Debug.e("--------", "lang MyApplication: $lang")
+        super.attachBaseContext(LanguageHelper.setLocale(context))
+
+    }
 
 
     internal inner class MyServiceReciever : BroadcastReceiver() {
