@@ -19,7 +19,18 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppThemeDefault">
-        <activity android:name=".ui.surnamecontacts.view.SurnameContactsActivity"></activity>
+        <activity android:name=".ui.temp.view.TempActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.surnamecontacts.view.SurnameContactsActivity" />
         <activity
             android:name=".ui.surname.view.SurnameActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize"
@@ -37,7 +48,7 @@
             android:name=".ui.exoplayer.exoplayerlikeyoutube.view.YoutubeActivity"
             android:configChanges="orientation|screenSize|layoutDirection|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.exoplayer.view.ExoplayerActivity"
             android:configChanges="orientation|screenSize|layoutDirection|keyboardHidden"
@@ -114,11 +125,11 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

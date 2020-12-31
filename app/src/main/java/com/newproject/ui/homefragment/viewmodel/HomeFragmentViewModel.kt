@@ -64,28 +64,29 @@ class HomeFragmentViewModel(application: Application) : BaseViewModel(applicatio
     }
 
     private fun init() {
-        dataList.clear()
-        dataList.add(HomeData(R.drawable.gallary, mContext.getString(R.string.gallery)))
-        dataList.add(HomeData(R.drawable.users, mContext.getString(R.string.users)))
-        dataList.add(HomeData(R.drawable.ads1, mContext.getString(R.string.advertise)))
-        dataList.add(HomeData(R.drawable.contact1, mContext.getString(R.string.contact)))
-        adapter = HomeAdapter(mContext)
-        adapter.addAll(dataList)
-        binder.recyclerViewHome.adapter = adapter
-        binder.recyclerViewHome.layoutManager =
-            GridLayoutManager(mContext, 2, LinearLayoutManager.VERTICAL, false)
-        binder.recyclerViewHome.addItemDecoration(GridDecore())
-        adapter.setEventListener(object : HomeAdapter.EventListener {
-            override fun onItemClick(pos: Int) {
-                if (pos == 0) {
-                    var intent: Intent = Intent(mContext, GalleryActivity::class.java)
-                    mContext.startActivity(intent)
-                } else if(pos == 1){
-                    var intent: Intent = Intent(mContext, SurnameActivity::class.java)
-                    mContext.startActivity(intent)
-                }
-            }
-        })
+//        dataList.clear()
+//        dataList.add(HomeData(R.drawable.gallary, mContext.getString(R.string.gallery)))
+//        dataList.add(HomeData(R.drawable.users, mContext.getString(R.string.users)))
+//        dataList.add(HomeData(R.drawable.ads1, mContext.getString(R.string.advertise)))
+//        dataList.add(HomeData(R.drawable.contact1, mContext.getString(R.string.contact)))
+//        adapter = HomeAdapter(mContext)
+//        adapter.addAll(dataList)
+//        binde
+//        r.recyclerViewHome.adapter = adapter
+//        binder.recyclerViewHome.layoutManager =
+//            GridLayoutManager(mContext, 2, LinearLayoutManager.VERTICAL, false)
+//        binder.recyclerViewHome.addItemDecoration(GridDecore())
+//        adapter.setEventListener(object : HomeAdapter.EventListener {
+//            override fun onItemClick(pos: Int) {
+//                if (pos == 0) {
+//                    var intent: Intent = Intent(mContext, GalleryActivity::class.java)
+//                    mContext.startActivity(intent)
+//                } else if(pos == 1){
+//                    var intent: Intent = Intent(mContext, SurnameActivity::class.java)
+//                    mContext.startActivity(intent)
+//                }
+//            }
+//        })
         binder.carouselViewHomefrag.setImageListener(imageListener)
         binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
         binder.carouselViewHomefrag.pageCount = sampleImages.size
@@ -106,21 +107,19 @@ class HomeFragmentViewModel(application: Application) : BaseViewModel(applicatio
     }
 
     inner class ViewClickHandler {
-        fun onReviewsAndRanks(view: View) {
+        fun onGallery(view: View) {
             try {
-//                var intent = Intent(mContext, ReviewsAndRankActivity::class.java)
-//                mContext.startActivity(intent)
-//                (mContext as Activity).finish()
+                var intent = Intent(mContext, GalleryActivity::class.java)
+                mContext.startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
 
-        fun onSeeAll(view: View) {
+        fun onContact(view: View) {
             try {
-//                var intent = Intent(mContext, ReviewsAndRankActivity::class.java)
-//                mContext.startActivity(intent)
-//                (mContext as Activity).finish()
+                var intent = Intent(mContext, SurnameActivity::class.java)
+                mContext.startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
