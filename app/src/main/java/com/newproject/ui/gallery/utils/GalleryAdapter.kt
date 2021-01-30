@@ -59,8 +59,8 @@ class GalleryAdapter() : RecyclerView.Adapter<GalleryAdapter.MyViewHolder>() {
         try {
 
             Glide.with(context).load(item.imageResource)
-                .placeholder(context.getDrawable(R.drawable.place_holder))
-                .error(context.getDrawable(R.drawable.place_holder))
+                .placeholder(context.getDrawable(R.drawable.image_4))
+                .error(context.getDrawable(R.drawable.image_4))
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.itemBinding.imageGallery)
             holder.itemBinding.textviewGallary.text = item.text

@@ -34,7 +34,6 @@ import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.ActivityExoplayerBinding
 import com.newproject.interfaces.TopBarClickListener
 import com.newproject.ui.home.view.HomeActivity
-import com.newproject.ui.mytask.view.MyTaskActivity
 
 class ExoplayerViewModel(application: Application) : BaseViewModel(application) {
 
@@ -310,8 +309,7 @@ class ExoplayerViewModel(application: Application) : BaseViewModel(application) 
 
         fun onClickTask(view: View) {
             try {
-                var intent = Intent(mContext, MyTaskActivity::class.java)
-                mContext.startActivity(intent)
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }

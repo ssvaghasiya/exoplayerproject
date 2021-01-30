@@ -30,16 +30,10 @@ import com.newproject.apputils.Utils
 import com.newproject.base.utils.SideMenuAdapter
 import com.newproject.databinding.CustomSideMenuBinding
 import com.newproject.interfaces.CallbackListener
-import com.newproject.ui.clients.view.ClientsActivity
-import com.newproject.ui.home.datamodel.*
-import com.newproject.ui.home.utils.PopUp
 import com.newproject.ui.home.view.HomeActivity
 import com.newproject.ui.login.datamodel.LogoutData
 import com.newproject.ui.login.datamodel.LogoutDataModel
 import com.newproject.ui.login.view.LoginActivity
-import com.newproject.ui.mytask.view.MyTaskActivity
-import com.newproject.ui.taskdetail.taskdetaildesc.view.TaskDetailsDescriptionActivity
-import com.newproject.ui.taskdetail.taskdetailstep1.view.TaskDetailsStep1Activity
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import java.text.SimpleDateFormat
@@ -52,16 +46,9 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
     private lateinit var activity: Activity
     private lateinit var logoutDataModel: LogoutDataModel
     lateinit var customSideMenuBinding: CustomSideMenuBinding
-    lateinit var checkInDataModel: CheckInDataModel
-    lateinit var checkOutDataModel: CheckOutDataModel
-    lateinit var attendanceDataModel: AttendanceDataModel
-    lateinit var breakStartDataModel: BreakStartDataModel
-    lateinit var breakEndDataModel: BreakEndDataModel
     var now: Calendar? = null
     var bCal: Calendar? = null
     var popUpwindow: PopupWindow? = null
-    lateinit var popUp: PopUp
-    lateinit var employeeAttendance: AttendanceData.Data.EmployeeAttendance
 
     fun finishActivity(mContext: Context) {
 
@@ -119,13 +106,7 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
         val data = ArrayList<MenuItem>()
         data.add(MenuItem("1", R.drawable.ic_home, getLabelText(R.string.home)))
         data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.My_Tasks)))
-        data.add(
-            MenuItem(
-                "3",
-                R.drawable.ic_icon_ionic_md_notifications_gray,
-                getLabelText(R.string.Notifications)
-            )
-        )
+        data.add(MenuItem("3", R.drawable.ic_icon_ionic_md_notifications_gray, getLabelText(R.string.Notifications)))
         data.add(MenuItem("4", R.drawable.ic_doctor, getLabelText(R.string.Clients)))
         data.add(MenuItem("5", R.drawable.ic_metro_user, getLabelText(R.string.My_Account)))
         data.add(MenuItem("6", R.drawable.ic_logout, getLabelText(R.string.log_out)))
@@ -192,18 +173,17 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             }
 
             "2" -> {
-                if (activity is MyTaskActivity) {
+                if (activity is HomeActivity) {
                     hideMenu(true)
                 } else {
-                    popUp.cancelTimer()
-                    val intent = Intent(activity, MyTaskActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-                    activity.startActivity(intent)
-                    hideMenu(false)
+//                    val intent = Intent(activity, MyTaskActivity::class.java)
+//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+//                    activity.startActivity(intent)
+//                    hideMenu(false)
                 }
             }
             "3" -> {
-                if (activity is TaskDetailsStep1Activity) {
+                if (activity is HomeActivity) {
                     hideMenu(true)
                 } else {
 //                    val intent = Intent(activity, TaskDetailsDescriptionActivity::class.java)
@@ -214,19 +194,18 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             }
 
             "4" -> {
-                if (activity is ClientsActivity) {
+                if (activity is HomeActivity) {
                     hideMenu(true)
                 } else {
-                    popUp.cancelTimer()
-                    val intent = Intent(activity, ClientsActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-                    activity.startActivity(intent)
-                    hideMenu(false)
+//                    val intent = Intent(activity, ClientsActivity::class.java)
+//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+//                    activity.startActivity(intent)
+//                    hideMenu(false)
                 }
             }
 
             "5" -> {
-                if (activity is TaskDetailsDescriptionActivity) {
+                if (activity is HomeActivity) {
                     hideMenu(true)
                 } else {
 //                    val intent = Intent(activity, TaskDetailsDescriptionActivity::class.java)
@@ -237,7 +216,7 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
 
             }
             "6" -> {
-                getCategory(view.context)
+//                getCategory(view.context)
             }
         }
     }
@@ -420,199 +399,6 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             e.printStackTrace()
         }
         return str
-    }
-
-    interface CheckInBreakListener {
-        fun onAttendance(attendanceData: AttendanceData?)
-        fun onCheckedIn()
-        fun onCheckedOut()
-        fun onBreakStart()
-        fun onBreakEnd()
-    }
-
-    fun getCheckIn(mContext: Context, checkInBreakListener: CheckInBreakListener) {
-        checkInDataModel = CheckInDataModel()
-        showDialog("", mContext as Activity)
-        checkInDataModel.getCheckIn(mContext)
-            .observeForever { checkInData ->
-                dismissDialog()
-                onCallResult(checkInData, mContext, checkInBreakListener)
-            }
-    }
-
-    private fun onCallResult(
-        checkInData: CheckInData?,
-        mContext: Context,
-        checkInBreakListener: CheckInBreakListener
-    ) = try {
-        if (checkInData != null) {
-            when (checkInData.statusCode) {
-                Constant.RESPONSE_SUCCESS_CODE -> {
-                    showToast(checkInData.data?.message)
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-                Constant.RESPONSE_FAILURE_CODE -> {
-                    try {
-                        showToast("Fail CheckIn")
-                        getEmployeeAttendance(mContext, checkInBreakListener)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-                else -> {
-                    showToast("Fail CheckIn")
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-            }
-
-
-        } else {
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-    fun getCheckout(mContext: Context, checkInBreakListener: CheckInBreakListener) {
-        checkOutDataModel = CheckOutDataModel()
-        showDialog("", mContext as Activity)
-        checkOutDataModel.getCheckOut(mContext)
-            .observeForever { checkOutData ->
-                dismissDialog()
-                onCallResult(checkOutData, mContext, checkInBreakListener)
-            }
-    }
-
-    private fun onCallResult(
-        checkOutData: CheckOutData?,
-        mContext: Context,
-        checkInBreakListener: CheckInBreakListener
-    ) = try {
-        if (checkOutData != null) {
-            when (checkOutData.statusCode) {
-                Constant.RESPONSE_SUCCESS_CODE -> {
-                    showToast(checkOutData.data?.message)
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-                Constant.RESPONSE_FAILURE_CODE -> {
-                    try {
-                        showToast("Fail Checkout")
-                        getEmployeeAttendance(mContext, checkInBreakListener)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-                else -> {
-                    showToast("Fail Checkout")
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-            }
-
-
-        } else {
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-    fun getEmployeeAttendance(mContext: Context, checkInBreakListener: CheckInBreakListener) {
-        attendanceDataModel = AttendanceDataModel()
-        popUp = PopUp()
-        attendanceDataModel.getEmployeeAttendance(mContext)
-            .observeForever { attendanceData ->
-                onCallResult(attendanceData, mContext, checkInBreakListener)
-            }
-    }
-
-    private fun onCallResult(
-        attendanceData: AttendanceData?,
-        mContext: Context,
-        checkInBreakListener: CheckInBreakListener
-    ) = try {
-
-        if (checkInBreakListener != null) {
-            checkInBreakListener.onAttendance(attendanceData)
-        } else {
-
-        }
-
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-    fun getBreakStart(mContext: Context, checkInBreakListener: CheckInBreakListener) {
-        breakStartDataModel = BreakStartDataModel()
-        breakStartDataModel.getBreakStart(mContext)
-            .observeForever { breakStartData ->
-                onCallResult(breakStartData, mContext, checkInBreakListener)
-            }
-    }
-
-    private fun onCallResult(
-        breakStartData: BreakStartData?,
-        mContext: Context,
-        checkInBreakListener: CheckInBreakListener
-    ) = try {
-        if (breakStartData != null) {
-            when (breakStartData.statusCode) {
-                Constant.RESPONSE_SUCCESS_CODE -> {
-                    showToast(breakStartData.data?.message)
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-                Constant.RESPONSE_FAILURE_CODE -> {
-                    try {
-                        showToast("Fail Break Start")
-                        getEmployeeAttendance(mContext, checkInBreakListener)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-                else -> {
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                    showToast("Fail Break Start")
-                }
-            }
-        } else {
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-    fun getBreakEnd(mContext: Context, checkInBreakListener: CheckInBreakListener) {
-        breakEndDataModel = BreakEndDataModel()
-        breakEndDataModel.getBreakEnd(mContext)
-            .observeForever { breakEndData ->
-                onCallResult(breakEndData, mContext, checkInBreakListener)
-            }
-    }
-
-    private fun onCallResult(
-        breakEndData: BreakEndData?,
-        mContext: Context,
-        checkInBreakListener: CheckInBreakListener
-    ) = try {
-        if (breakEndData != null) {
-            when (breakEndData.statusCode) {
-                Constant.RESPONSE_SUCCESS_CODE -> {
-                    popUp.closedPopup(popUpwindow!!)
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                }
-                Constant.RESPONSE_FAILURE_CODE -> {
-                    try {
-                        showToast("Fail Break End")
-                        getEmployeeAttendance(mContext, checkInBreakListener)
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-                else -> {
-                    getEmployeeAttendance(mContext, checkInBreakListener)
-                    showToast("Fail Break End")
-                }
-            }
-        } else {
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
     }
 
 }

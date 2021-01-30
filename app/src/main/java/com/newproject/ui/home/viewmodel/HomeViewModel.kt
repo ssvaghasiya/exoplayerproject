@@ -1,61 +1,40 @@
 package com.newproject.ui.home.viewmodel
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.Application
-import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Color
-import android.graphics.Typeface
-import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
-import android.os.Handler
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.navigation.NavigationView
 import com.newproject.R
 import com.newproject.apputils.Constant
-import com.newproject.apputils.Debug
 import com.newproject.apputils.Utils
 import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.ActivityHomeBinding
 import com.newproject.interfaces.TopBarClickListener
-import com.newproject.ui.home.datamodel.*
-import com.newproject.ui.home.utils.HomeDataAdapter
-import com.newproject.ui.home.utils.PopUp
-import com.newproject.ui.taskdetail.taskdetaildesc.view.TaskDetailsDescriptionActivity
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.newproject.apputils.LanguageHelper
-import com.newproject.ui.gallaryfragment.GallaryFragment
+import com.newproject.ui.gallery.view.GalleryActivity
 import com.newproject.ui.home.view.HomeActivity
-import com.newproject.ui.homefragment.view.HomeFragment
-import java.lang.reflect.Type
-import java.text.SimpleDateFormat
-import java.util.*
+import com.newproject.ui.homefragment.utils.HomeAdapter
+import com.newproject.ui.surname.view.SurnameActivity
+import com.synnapps.carouselview.ImageClickListener
+import com.synnapps.carouselview.ImageListener
 
 
-class HomeViewModel(application: Application) : BaseViewModel(application),
-    NavigationView.OnNavigationItemSelectedListener {
+class HomeViewModel(application: Application) : BaseViewModel(application){
 
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binder: ActivityHomeBinding
     lateinit var mContext: Context
+    lateinit var adapter: HomeAdapter
+
+    var sampleImages = intArrayOf(
+        R.drawable.image_4,
+        R.drawable.image_4,
+        R.drawable.image_4,
+        R.drawable.image_4,
+        R.drawable.image_4
+    )
 
     fun setBinder(
         binder: ActivityHomeBinding
@@ -65,39 +44,52 @@ class HomeViewModel(application: Application) : BaseViewModel(application),
         binder.viewModel = this
         binder.viewClickHandler = ViewClickHandler()
         binder.topbar.isTextShow = true
-        binder.topbar.isLanguageImgShow = true
+        binder.topbar.isNavShow = true
+        binder.topbar.isBackShow = false
+        binder.topbar.isLanguageImgShow = false
         binder.topbar.topBarClickListener = SlideMenuClickListener()
         init()
     }
 
 
     fun init() {
-        loadFragment(HomeFragment())
-        binder.navView.setNavigationItemSelectedListener(this)
-        toggle = ActionBarDrawerToggle(
-            mContext as Activity, binder.drawerLayout, binder.topbar.toolbarMain,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        binder.drawerLayout.addDrawerListener(toggle)
+        binder.carouselViewHomefrag.setImageListener(imageListener)
+        binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
+        binder.carouselViewHomefrag.pageCount = sampleImages.size
 
     }
 
-    fun onResume() {
+    var imageListener: ImageListener = object : ImageListener {
+        override fun setImageForPosition(position: Int, imageView: ImageView?) {
+            imageView?.setImageResource(sampleImages[position])
+        }
+    }
 
+
+    var imageClickListener: ImageClickListener = object : ImageClickListener {
+        override fun onClick(position: Int) {
+//            Toast.makeText(mContext, "Carousel $position", Toast.LENGTH_SHORT).show()
+        }
     }
 
 
     inner class ViewClickHandler {
-
-        fun onSearchClick(view: View) {
+        fun onGallery(view: View) {
+            try {
+                var intent = Intent(mContext, GalleryActivity::class.java)
+                mContext.startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
 
-        fun onCloseClick(view: View) {
-        }
-
-        fun onExploreClick(view: View) {
-
+        fun onContact(view: View) {
+            try {
+                var intent = Intent(mContext, SurnameActivity::class.java)
+                mContext.startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 
@@ -108,6 +100,13 @@ class HomeViewModel(application: Application) : BaseViewModel(application),
             if (value.equals(getLabelText(R.string.language_change))) {
                 try {
                     onLanguage(view)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+            if (value.equals(getLabelText(R.string.menu))) {
+                try {
+                    onTopMenuClick()
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -164,53 +163,5 @@ class HomeViewModel(application: Application) : BaseViewModel(application),
             Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         mContext.startActivity(i)
     }
-
-
-    fun loadFragment(fragment: Fragment) {
-        var transaction = (mContext as AppCompatActivity).supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame, fragment)
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-        transaction.commit()
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_item_one -> {
-                loadFragment(HomeFragment())
-            }
-            R.id.nav_item_two -> {
-                loadFragment(GallaryFragment())
-            }
-            R.id.nav_item_three -> showToast("Item 3 Selected")
-        }
-        binder.drawerLayout.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-
-    fun onPostCreate(savedInstanceState: Bundle?) {
-        toggle.syncState()
-    }
-
-    fun onConfigurationChanged(newConfig: Configuration) {
-        toggle.onConfigurationChanged(newConfig)
-    }
-
-    fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return false
-    }
-
-    fun onBackPressed(): Boolean {
-        if (binder.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            binder.drawerLayout.closeDrawer(GravityCompat.START)
-            return true
-        } else{
-            return false
-        }
-    }
-
 }
 

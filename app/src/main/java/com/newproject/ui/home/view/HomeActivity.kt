@@ -27,27 +27,4 @@ class HomeActivity : BaseActivity() {
         viewModel = ViewModelProvider(activity).get(HomeViewModel::class.java)
         viewModel.setBinder(binding)
     }
-
-    override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-        viewModel.onPostCreate(savedInstanceState)
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        viewModel.onConfigurationChanged(newConfig)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (viewModel.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onBackPressed(){
-        if(!viewModel.onBackPressed()){
-            super.onBackPressed()
-        }
-    }
 }
