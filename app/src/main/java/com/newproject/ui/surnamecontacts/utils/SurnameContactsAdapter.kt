@@ -18,7 +18,6 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
     private var data = mutableListOf<SurnameContactsData>()
     lateinit var context: Context
 
-
     constructor(context: Context) : this() {
         this.context = context
 
@@ -57,10 +56,9 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
         val item = getItem(position)
         try {
 
-            holder.itemBinding.txtIndex.text = item.index.toString()+"."
+            holder.itemBinding.txtIndex.text = (position + 1).toString()+"."
             holder.itemBinding.txtPersonNamee.text = item.name
-            holder.itemBinding.txtNumber.text = item.number
-
+            holder.itemBinding.txtNumber.text = item.phone
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
         }
@@ -74,6 +72,12 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
     fun addAll(mData: List<SurnameContactsData>?) {
         data.clear()
         data.addAll(mData!!)
+        notifyDataSetChanged()
+    }
+
+
+    fun add(mData: SurnameContactsData) {
+        data.add(mData)
         notifyDataSetChanged()
     }
 

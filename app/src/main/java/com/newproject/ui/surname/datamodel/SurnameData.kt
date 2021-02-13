@@ -1,3 +1,6 @@
 package com.newproject.ui.surname.datamodel
 
-data class SurnameData( val text: String)
+class SurnameData{
+    var id: String? = null
+    var surname: String? = null
+}

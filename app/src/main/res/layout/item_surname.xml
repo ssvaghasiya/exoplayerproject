@@ -16,7 +16,7 @@
             android:layout_height="65dp"
             android:background="#EDE4E7">
 
-            <TextView
+            <com.newproject.custom.CTextViewB
                 android:id="@+id/surname_family"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

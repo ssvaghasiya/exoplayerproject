@@ -1,4 +1,4 @@
-package com.newproject.ui.surname.viewmodel
+package com.newproject.ui.persondetail.viewmodel
 
 import android.app.Activity
 import android.app.Application
@@ -10,22 +10,25 @@ import com.newproject.apputils.Debug
 import com.newproject.apputils.FirestoreTable
 import com.newproject.apputils.Utils
 import com.newproject.base.viewmodel.BaseViewModel
-import com.newproject.databinding.ActivityGalleryBinding
+import com.newproject.databinding.ActivityPersonDetailsBinding
 import com.newproject.databinding.ActivitySurnameBinding
 import com.newproject.interfaces.TopBarClickListener
-import com.newproject.ui.exoplayer.view.ExoplayerActivity
+import com.newproject.ui.persondetail.datamodel.PersonDetailData
+import com.newproject.ui.persondetail.utils.PersonDetailDataAdapter
 import com.newproject.ui.surname.datamodel.SurnameData
 import com.newproject.ui.surname.utils.SurnameAdapter
+import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
 import com.newproject.ui.surnamecontacts.view.SurnameContactsActivity
 
-class SurnameViewModel(application: Application) : BaseViewModel(application) {
+class PersonDetailsViewModel(application: Application) : BaseViewModel(application) {
 
-    private lateinit var binder: ActivitySurnameBinding
+    private lateinit var binder: ActivityPersonDetailsBinding
     private lateinit var mContext: Context
-    lateinit var adapter: SurnameAdapter
+    lateinit var adapter: PersonDetailDataAdapter
+    var person: SurnameContactsData? = null
 
 
-    fun setBinder(binder: ActivitySurnameBinding) {
+    fun setBinder(binder: ActivityPersonDetailsBinding) {
         this.binder = binder
         this.mContext = binder.root.context
         this.binder.viewModel = this
@@ -37,19 +40,20 @@ class SurnameViewModel(application: Application) : BaseViewModel(application) {
     }
 
     private fun init() {
-        adapter = SurnameAdapter(mContext)
+        person = (mContext as Activity).intent.extras?.getSerializable("person") as SurnameContactsData
+
+        adapter = PersonDetailDataAdapter(mContext)
         binder.rvSurname.adapter = adapter
-        adapter.setEventListener(object : SurnameAdapter.EventListener {
-            override fun onItemClick(pos: Int, item: SurnameData) {
-                var intent = Intent(mContext, SurnameContactsActivity::class.java)
-                intent.putExtra("surname_id",item.id)
-                mContext.startActivity(intent)
+        adapter.setEventListener(object : PersonDetailDataAdapter.EventListener {
+
+            override fun onItemClick(pos: Int, item: PersonDetailData) {
+
             }
         })
-        getSurnameList()
+//        getPersonDetails()
     }
 
-    private fun getSurnameList() {
+    private fun getPersonDetails() {
         try {
 
 //            var query = db.collection(FirestoreTable.CHAT)
@@ -60,9 +64,15 @@ class SurnameViewModel(application: Application) : BaseViewModel(application) {
 
             query.get().addOnSuccessListener { result ->
                 if (result != null && result.isEmpty.not()) {
-                    val item = result.toObjects(SurnameData::class.java)
-                    adapter.addAll(item)
-                    Debug.e("Get All Data Successfully")
+                    if (result != null && result.isEmpty.not()) {
+                        val item = result.toObjects(PersonDetailData::class.java)
+                        for (i in item) {
+                            if (i.main_number.equals(person?.phone)) {
+                                adapter.add(i)
+                            }
+                        }
+                        Debug.e("Get All Data Successfully")
+                    }
                 }
                 dismissDialog()
             }.addOnFailureListener {

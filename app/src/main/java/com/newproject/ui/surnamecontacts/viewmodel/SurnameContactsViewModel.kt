@@ -1,25 +1,32 @@
 package com.newproject.ui.surnamecontacts.viewmodel
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.view.View
+import com.google.firebase.firestore.Query
+import com.newproject.R
+import com.newproject.apputils.Debug
+import com.newproject.apputils.FirestoreTable
 import com.newproject.apputils.Utils
 import com.newproject.base.viewmodel.BaseViewModel
-import com.newproject.databinding.ActivitySurnameBinding
 import com.newproject.databinding.ActivitySurnameContactsBinding
 import com.newproject.interfaces.TopBarClickListener
-import com.newproject.ui.surname.datamodel.SurnameData
-import com.newproject.ui.surname.utils.SurnameAdapter
+import com.newproject.ui.persondetail.datamodel.PersonDetailData
+import com.newproject.ui.persondetail.view.PersonDetailsActivity
 import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
 import com.newproject.ui.surnamecontacts.utils.SurnameContactsAdapter
+import com.newproject.ui.surnamecontacts.view.SurnameContactsActivity
+
 
 class SurnameContactsViewModel(application: Application) : BaseViewModel(application) {
 
     private lateinit var binder: ActivitySurnameContactsBinding
     private lateinit var mContext: Context
     lateinit var adapter: SurnameContactsAdapter
-
-    var dataList: MutableList<SurnameContactsData> = mutableListOf()
+    var surname_id: String? = null
+    private val TAG = "SurnameContactsViewModel"
 
     fun setBinder(binder: ActivitySurnameContactsBinding) {
         this.binder = binder
@@ -32,36 +39,61 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
     }
 
     private fun init() {
-        dataList.clear()
-        dataList.add(SurnameContactsData( 1,"name","7894561235"))
-        dataList.add(SurnameContactsData( 2,"name","7894561235"))
-        dataList.add(SurnameContactsData( 3,"name","7894561235"))
-        dataList.add(SurnameContactsData( 4,"name","7894561235"))
-        dataList.add(SurnameContactsData( 5,"name","7894561235"))
-        dataList.add(SurnameContactsData( 6,"name","7894561235"))
-        dataList.add(SurnameContactsData( 7,"name","7894561235"))
+        surname_id = (mContext as Activity).intent.extras?.getString("surname_id")
 
         adapter = SurnameContactsAdapter(mContext)
         binder.rvSurname.adapter = adapter
-        adapter.addAll(dataList)
         adapter.setEventListener(object : SurnameContactsAdapter.EventListener {
             override fun onItemClick(pos: Int, item: SurnameContactsData) {
-
+                var intent = Intent(mContext, PersonDetailsActivity::class.java)
+                intent.putExtra("person",item)
+                mContext.startActivity(intent)
             }
         })
+        getMemberList()
+    }
 
+    private fun getMemberList() {
+        try {
+
+//            var query = db.collection(FirestoreTable.CHAT)
+//                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
+            showDialog("",mContext as Activity)
+            Debug.e("Id", surname_id.toString())
+            var query = db!!.collection(FirestoreTable.MAIN_MEMBER_NAME)
+
+            query.get().addOnSuccessListener { result ->
+                if (result != null && result.isEmpty.not()) {
+                    val item = result.toObjects(SurnameContactsData::class.java)
+                    for (i in item) {
+                        if (i.surname_id.equals(surname_id!!.trim())) {
+                            adapter.add(i)
+                        }
+                    }
+                    Debug.e("Get All Data Successfully")
+                }
+                dismissDialog()
+            }.addOnFailureListener {
+                it.printStackTrace()
+                dismissDialog()
+            }.addOnCompleteListener {
+                dismissDialog()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     inner class SlideMenuClickListener : TopBarClickListener {
         override fun onTopBarClickListener(view: View?, value: String?) {
             Utils.hideKeyBoard(getContext(), view!!)
-//            if (value.equals(getLabelText(R.string.menu))) {
-//                try {
-//
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                }
-//            }
+            if (value.equals(getLabelText(R.string.menu))) {
+                try {
+
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
         }
 
         override fun onBackClicked(view: View?) {
@@ -69,21 +101,9 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
     }
 
     inner class ViewClickHandler {
-        fun onReviewsAndRanks(view: View) {
-            try {
-//                var intent = Intent(mContext, ReviewsAndRankActivity::class.java)
-//                mContext.startActivity(intent)
-//                (mContext as Activity).finish()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-
         fun onSeeAll(view: View) {
             try {
-//                var intent = Intent(mContext, ReviewsAndRankActivity::class.java)
-//                mContext.startActivity(intent)
-//                (mContext as Activity).finish()
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }

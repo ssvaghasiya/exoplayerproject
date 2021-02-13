@@ -14,6 +14,7 @@ import com.newproject.apputils.Utils
 import com.newproject.base.view.BaseActivity
 import com.newproject.databinding.ActivitySplashBinding
 import com.newproject.exceptions.networks.NoInternetException
+import com.newproject.ui.MyApplication
 import com.newproject.ui.home.view.HomeActivity
 import com.newproject.ui.login.view.LoginActivity
 import java.io.PrintWriter
@@ -35,7 +36,7 @@ class SplashActivity : BaseActivity() {
                 startActivity(i)
                 finish()
             }  else {
-                val i = Intent(activity, LoginActivity::class.java)
+                val i = Intent(activity, HomeActivity::class.java)
                 i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(i)
                 finish()
@@ -48,6 +49,8 @@ class SplashActivity : BaseActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(activity, R.color.common_bg)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
+
+        (application as MyApplication).initFirebase()
 
         if (Debug.DEBUG_EXCEPTION) {
             Thread.setDefaultUncaughtExceptionHandler { paramThread, paramThrowable ->

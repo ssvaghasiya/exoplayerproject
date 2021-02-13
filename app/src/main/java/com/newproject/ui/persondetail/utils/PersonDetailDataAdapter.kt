@@ -1,23 +1,19 @@
-package com.newproject.ui.surname.utils
+package com.newproject.ui.persondetail.utils
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.newproject.R
-import com.newproject.databinding.ItemGalleryBinding
 import com.newproject.databinding.ItemSurnameBinding
-import com.newproject.ui.gallery.utils.GalleryAdapter
-import com.newproject.ui.surname.datamodel.SurnameData
+import com.newproject.ui.persondetail.datamodel.PersonDetailData
 
-class SurnameAdapter() : RecyclerView.Adapter<SurnameAdapter.MyViewHolder>() {
+class PersonDetailDataAdapter() : RecyclerView.Adapter<PersonDetailDataAdapter.MyViewHolder>() {
 
     private lateinit var mEventListener: EventListener
 
-    private var data = mutableListOf<SurnameData>()
+    private var data = mutableListOf<PersonDetailData>()
     lateinit var context: Context
 
 
@@ -32,7 +28,7 @@ class SurnameAdapter() : RecyclerView.Adapter<SurnameAdapter.MyViewHolder>() {
 
 
     interface EventListener {
-        fun onItemClick(pos: Int, item: SurnameData)
+        fun onItemClick(pos: Int, item: PersonDetailData)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -50,7 +46,7 @@ class SurnameAdapter() : RecyclerView.Adapter<SurnameAdapter.MyViewHolder>() {
 
     }
 
-    fun getItem(p: Int): SurnameData {
+    fun getItem(p: Int): PersonDetailData {
         return data[p]
 
     }
@@ -58,8 +54,8 @@ class SurnameAdapter() : RecyclerView.Adapter<SurnameAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = getItem(position)
         try {
-            
-            holder.itemBinding.surnameFamily.text = item.surname
+
+            holder.itemBinding.surnameFamily.text = item.name
 
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
@@ -71,12 +67,16 @@ class SurnameAdapter() : RecyclerView.Adapter<SurnameAdapter.MyViewHolder>() {
 
     }
 
-    fun addAll(mData: List<SurnameData>?) {
+    fun addAll(mData: List<PersonDetailData>?) {
         data.clear()
         data.addAll(mData!!)
         notifyDataSetChanged()
     }
 
+    fun add(mData: PersonDetailData) {
+        data.add(mData)
+        notifyDataSetChanged()
+    }
 
     fun clear() {
         data.clear()

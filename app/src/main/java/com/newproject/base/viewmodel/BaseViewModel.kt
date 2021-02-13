@@ -19,6 +19,10 @@ import com.newproject.R
 import com.newproject.apputils.Constant
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -36,6 +40,7 @@ import com.newproject.ui.login.datamodel.LogoutDataModel
 import com.newproject.ui.login.view.LoginActivity
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
+import com.newproject.ui.MyApplication
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -44,11 +49,28 @@ import kotlin.collections.ArrayList
 open class BaseViewModel(application: Application) : AppViewModel(application) {
     lateinit var result: Drawer
     private lateinit var activity: Activity
-    private lateinit var logoutDataModel: LogoutDataModel
     lateinit var customSideMenuBinding: CustomSideMenuBinding
-    var now: Calendar? = null
-    var bCal: Calendar? = null
-    var popUpwindow: PopupWindow? = null
+
+    val db: FirebaseFirestore?
+        get() {
+            return (getApplication() as MyApplication).db
+        }
+
+    val auth: FirebaseAuth?
+        get() {
+            return (getApplication() as MyApplication).auth
+        }
+
+    val storageRef: StorageReference?
+        get() {
+            return (getApplication() as MyApplication).storageRef
+        }
+
+    val firebaseStorage: FirebaseStorage?
+        get() {
+            return (getApplication() as MyApplication).firebaseStorage
+        }
+
 
     fun finishActivity(mContext: Context) {
 
@@ -67,7 +89,6 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
     private lateinit var mAdapter: SideMenuAdapter
     fun initDrawer(activity: Activity, mContext: Context) {
         this.activity = activity
-        logoutDataModel = LogoutDataModel()
         customSideMenuBinding = DataBindingUtil.inflate(
             activity.layoutInflater,
             R.layout.custom_side_menu,
@@ -106,7 +127,13 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
         val data = ArrayList<MenuItem>()
         data.add(MenuItem("1", R.drawable.ic_home, getLabelText(R.string.home)))
         data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.My_Tasks)))
-        data.add(MenuItem("3", R.drawable.ic_icon_ionic_md_notifications_gray, getLabelText(R.string.Notifications)))
+        data.add(
+            MenuItem(
+                "3",
+                R.drawable.ic_icon_ionic_md_notifications_gray,
+                getLabelText(R.string.Notifications)
+            )
+        )
         data.add(MenuItem("4", R.drawable.ic_doctor, getLabelText(R.string.Clients)))
         data.add(MenuItem("5", R.drawable.ic_metro_user, getLabelText(R.string.My_Account)))
         data.add(MenuItem("6", R.drawable.ic_logout, getLabelText(R.string.log_out)))
@@ -173,93 +200,24 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             }
 
             "2" -> {
-                if (activity is HomeActivity) {
-                    hideMenu(true)
-                } else {
-//                    val intent = Intent(activity, MyTaskActivity::class.java)
-//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//                    activity.startActivity(intent)
-//                    hideMenu(false)
-                }
+
             }
             "3" -> {
-                if (activity is HomeActivity) {
-                    hideMenu(true)
-                } else {
-//                    val intent = Intent(activity, TaskDetailsDescriptionActivity::class.java)
-//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//                    activity.startActivity(intent)
-//                    hideMenu(false)
-                }
+
             }
 
             "4" -> {
-                if (activity is HomeActivity) {
-                    hideMenu(true)
-                } else {
-//                    val intent = Intent(activity, ClientsActivity::class.java)
-//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//                    activity.startActivity(intent)
-//                    hideMenu(false)
-                }
+
             }
 
             "5" -> {
-                if (activity is HomeActivity) {
-                    hideMenu(true)
-                } else {
-//                    val intent = Intent(activity, TaskDetailsDescriptionActivity::class.java)
-//                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-//                    activity.startActivity(intent)
-//                    hideMenu(false)
-                }
 
             }
             "6" -> {
-//                getCategory(view.context)
             }
         }
     }
 
-    fun getCategory(context: Context) {
-        isInternetAvailable(context, object : CallbackListener {
-            override fun onSuccess() {
-                logoutDataModel.logOut(context).observeForever { categoryData ->
-                    onCallResult(categoryData, context)
-                }
-            }
-
-            override fun onCancel() {
-            }
-
-            override fun onRetry() {
-                getCategory(context)
-            }
-        })
-    }
-
-    private fun onCallResult(logoutData: LogoutData, context: Context) = try {
-        when (logoutData.statusCode) {
-            Constant.RESPONSE_SUCCESS_CODE -> {
-                showToast(logoutData.message)
-                Utils.clearLoginCredentials(context)
-                LocalBroadcastManager.getInstance(context)
-                    .sendBroadcast(Intent(Constant.FINISH_ACTIVITY))
-                val intent = Intent(context, LoginActivity::class.java)
-                intent.flags =
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                context.startActivity(intent)
-            }
-            Constant.RESPONSE_FAILURE_CODE -> {
-                showToast(logoutData.message)
-            }
-            else -> {
-                showToast(logoutData.message)
-            }
-        }
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
 
     private fun hideMenu(b: Boolean) {
         try {

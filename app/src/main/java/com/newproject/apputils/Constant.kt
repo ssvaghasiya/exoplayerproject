@@ -75,6 +75,7 @@ object Constant {
 
     const val CURRENCY_NGN = "NGN"
     const val DEFAULT_TRANSACTION_AMT_ADD_CARD = 10
+    const val APP_GOES_FORGROUND = "app_goes_forground"
 
 
 

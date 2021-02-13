@@ -53,6 +53,7 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
 
 
     fun init() {
+//        initDrawer(mContext)
         binder.carouselViewHomefrag.setImageListener(imageListener)
         binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
         binder.carouselViewHomefrag.pageCount = sampleImages.size
