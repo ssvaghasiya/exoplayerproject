@@ -50,7 +50,7 @@ class PersonDetailsViewModel(application: Application) : BaseViewModel(applicati
 
             }
         })
-//        getPersonDetails()
+        getPersonDetails()
     }
 
     private fun getPersonDetails() {
@@ -59,7 +59,7 @@ class PersonDetailsViewModel(application: Application) : BaseViewModel(applicati
 //            var query = db.collection(FirestoreTable.CHAT)
 //                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
             showDialog("",mContext as Activity)
-            var query = db!!.collection(FirestoreTable.SURNAME)
+            var query = db!!.collection(FirestoreTable.SUB_DETAIL_EACH_MEMBER)
 
 
             query.get().addOnSuccessListener { result ->
@@ -67,7 +67,9 @@ class PersonDetailsViewModel(application: Application) : BaseViewModel(applicati
                     if (result != null && result.isEmpty.not()) {
                         val item = result.toObjects(PersonDetailData::class.java)
                         for (i in item) {
+                            Debug.e(i.main_number.toString()+" "+person?.phone)
                             if (i.main_number.equals(person?.phone)) {
+                                Debug.e(i.name.toString())
                                 adapter.add(i)
                             }
                         }
