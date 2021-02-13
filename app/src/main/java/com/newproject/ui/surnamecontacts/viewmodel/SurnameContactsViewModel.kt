@@ -58,27 +58,40 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
 
 //            var query = db.collection(FirestoreTable.CHAT)
 //                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
+//            showDialog("",mContext as Activity)
+//            Debug.e("Id", surname_id.toString())
+//            var query = db!!.collection(FirestoreTable.MAIN_MEMBER_NAME)
+//
+//            query.get().addOnSuccessListener { result ->
+//                if (result != null && result.isEmpty.not()) {
+//                    val item = result.toObjects(SurnameContactsData::class.java)
+//                    for (i in item) {
+//                        if (i.surname_id.equals(surname_id!!.trim())) {
+//                            adapter.add(i)
+//                        }
+//                    }
+//                    Debug.e("Get All Data Successfully")
+//                }
+//                dismissDialog()
+//            }.addOnFailureListener {
+//                it.printStackTrace()
+//                dismissDialog()
+//            }.addOnCompleteListener {
+//                dismissDialog()
+//            }
             showDialog("",mContext as Activity)
-            Debug.e("Id", surname_id.toString())
-            var query = db!!.collection(FirestoreTable.MAIN_MEMBER_NAME)
-
-            query.get().addOnSuccessListener { result ->
-                if (result != null && result.isEmpty.not()) {
-                    val item = result.toObjects(SurnameContactsData::class.java)
-                    for (i in item) {
-                        if (i.surname_id.equals(surname_id!!.trim())) {
-                            adapter.add(i)
-                        }
+            db!!.collection(FirestoreTable.MAIN_MEMBER_NAME).whereEqualTo("surname_id",surname_id).get()
+                .addOnSuccessListener{ documents ->
+                    dismissDialog()
+                    for(document in documents){
+                        Debug.e(TAG,"${document.id}=>${document.data}")
                     }
-                    Debug.e("Get All Data Successfully")
                 }
-                dismissDialog()
-            }.addOnFailureListener {
-                it.printStackTrace()
-                dismissDialog()
-            }.addOnCompleteListener {
-                dismissDialog()
-            }
+                .addOnFailureListener{exception ->
+                    dismissDialog()
+                    Debug.e("Error getting documents:",exception.message.toString())
+                }
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
