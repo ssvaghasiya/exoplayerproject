@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.view.View
+import com.google.firebase.firestore.Query
 import com.newproject.R
 import com.newproject.apputils.Debug
 import com.newproject.apputils.FirestoreTable
@@ -23,7 +24,6 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
     private lateinit var binder: ActivitySurnameContactsBinding
     private lateinit var mContext: Context
     lateinit var adapter: SurnameContactsAdapter
-    var surname_id: String? = null
     private val TAG = "SurnameContactsViewModel"
     var item: SurnameData? = null
 
@@ -38,7 +38,6 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
     }
 
     private fun init() {
-//        surname_id = (mContext as Activity).intent.extras?.getString("surname_id")
         item =
             (mContext as Activity).intent.extras?.getSerializable("surname") as SurnameData
 
@@ -60,6 +59,7 @@ class SurnameContactsViewModel(application: Application) : BaseViewModel(applica
             Debug.e("surname_id", item?.id.toString())
             showDialog("", mContext as Activity)
             db!!.collection(FirestoreTable.MAIN_MEMBER_NAME)
+                .orderBy("name",Query.Direction.ASCENDING)
                 .whereEqualTo("surname_id", item!!.id!!.trim()).get()
                 .addOnSuccessListener { documents ->
                     dismissDialog()

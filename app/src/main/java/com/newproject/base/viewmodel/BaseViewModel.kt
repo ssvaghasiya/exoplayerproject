@@ -41,6 +41,7 @@ import com.newproject.ui.login.view.LoginActivity
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.newproject.ui.MyApplication
+import com.newproject.ui.addperson.view.AddPersonActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -126,17 +127,7 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
         customSideMenuBinding.rvMenuList.adapter = mAdapter
         val data = ArrayList<MenuItem>()
         data.add(MenuItem("1", R.drawable.ic_home, getLabelText(R.string.home)))
-        data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.My_Tasks)))
-        data.add(
-            MenuItem(
-                "3",
-                R.drawable.ic_icon_ionic_md_notifications_gray,
-                getLabelText(R.string.Notifications)
-            )
-        )
-        data.add(MenuItem("4", R.drawable.ic_doctor, getLabelText(R.string.Clients)))
-        data.add(MenuItem("5", R.drawable.ic_metro_user, getLabelText(R.string.My_Account)))
-        data.add(MenuItem("6", R.drawable.ic_logout, getLabelText(R.string.log_out)))
+        data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.admin)))
 //
 //
         mAdapter.addAll(data)
@@ -182,7 +173,7 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             .build()
 
         result.drawerLayout.setScrimColor(Color.TRANSPARENT)
-        result.drawerLayout.fitsSystemWindows = false
+        result.drawerLayout.fitsSystemWindows = true
     }
 
 
@@ -200,7 +191,14 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
             }
 
             "2" -> {
-
+                if (activity is AddPersonActivity) {
+                    hideMenu(true)
+                } else {
+                    val intent = Intent(activity, AddPersonActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                    activity.startActivity(intent)
+                    hideMenu(false)
+                }
             }
             "3" -> {
 

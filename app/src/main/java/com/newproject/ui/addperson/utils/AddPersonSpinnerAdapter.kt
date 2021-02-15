@@ -10,7 +10,7 @@ import com.newproject.R
 import com.newproject.ui.surname.datamodel.SurnameData
 
 
-class CustomAdapter : BaseAdapter() {
+class AddPersonSpinnerAdapter : BaseAdapter() {
 
 
     lateinit var data: MutableList<SurnameData>

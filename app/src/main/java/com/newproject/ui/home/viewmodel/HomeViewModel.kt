@@ -24,7 +24,6 @@ import com.synnapps.carouselview.ImageListener
 
 class HomeViewModel(application: Application) : BaseViewModel(application){
 
-    private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binder: ActivityHomeBinding
     lateinit var mContext: Context
     lateinit var adapter: HomeAdapter
@@ -54,7 +53,7 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
 
 
     fun init() {
-//        initDrawer(mContext)
+        initDrawer(mContext)
         binder.carouselViewHomefrag.setImageListener(imageListener)
         binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
         binder.carouselViewHomefrag.pageCount = sampleImages.size
@@ -96,8 +95,8 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
 
         fun onAddPerson(view: View) {
             try {
-                var intent = Intent(mContext, AddPersonActivity::class.java)
-                mContext.startActivity(intent)
+//                var intent = Intent(mContext, AddPersonActivity::class.java)
+//                mContext.startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

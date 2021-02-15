@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
@@ -15,18 +16,20 @@ import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.ActivityAddPersonBinding
 import com.newproject.interfaces.TopBarClickListener
 import com.newproject.ui.addmember.view.AddMemberActivity
-import com.newproject.ui.addperson.utils.CustomAdapter
+import com.newproject.ui.addperson.utils.AddPersonSpinnerAdapter
 import com.newproject.ui.surname.datamodel.SurnameData
 import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
+
 
 class AddPersonViewModel(application: Application) : BaseViewModel(application), AdapterView.OnItemSelectedListener {
 
     private lateinit var binder: ActivityAddPersonBinding
     private lateinit var mContext: Context
-    private var data = mutableListOf<SurnameData>()
+//    private var surnameList = mutableListOf<SurnameData>()
     private val TAG = "AddPersonViewModel"
     var surnameData: SurnameData? = null
     var surnameContactsData: SurnameContactsData? = null
+    var mGetSurName: ArrayList<SurnameData>? = null
 
 
     fun setBinder(binder: ActivityAddPersonBinding) {
@@ -36,9 +39,7 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
         this.binder.viewClickHandler = ViewClickHandler()
         surnameData = SurnameData()
         surnameContactsData = SurnameContactsData()
-//        binder.topBar.isTextShow = true
-//        binder.topBar.isBackShow = true
-//        binder.topBar.topBarClickListener = SlideMenuClickListener()
+        mGetSurName = ArrayList()
         init()
     }
 
@@ -55,13 +56,21 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
             query.get().addOnSuccessListener { result ->
                 if (result != null && result.isEmpty.not()) {
                     val item = result.toObjects(SurnameData::class.java)
-                    data.clear()
-                    data.addAll(item)
-                    val customAdapter = CustomAdapter()
-                    customAdapter.customeSpinnerAdapter(mContext, data)
-                    binder.spinnerOffice.adapter = customAdapter
-                    binder.spinnerOffice.onItemSelectedListener = this
-                    Debug.e("Get All Data Successfully")
+//                    surnameList.clear()
+//                    surnameList.addAll(item)
+                    try {
+                        mGetSurName?.clear()
+                        mGetSurName?.addAll(item)
+                        if(mGetSurName?.size!! > 0){
+                            val customAdapter = AddPersonSpinnerAdapter()
+                            customAdapter.customeSpinnerAdapter(mContext, mGetSurName!!)
+                            binder.spinnerSurName.adapter = customAdapter
+                            binder.spinnerSurName.onItemSelectedListener = this
+                        }
+                        Debug.e("Get All Data Successfully")
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
                 }
                 dismissDialog()
             }.addOnFailureListener {
@@ -79,7 +88,7 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
     }
 
     fun addSurname(surnameData1: SurnameData) {
-        showDialog("",mContext as Activity)
+        showDialog("", mContext as Activity)
         surnameData1.id = db!!.collection(FirestoreTable.SURNAME).document().id
         db!!.collection(FirestoreTable.SURNAME)
             .document(surnameData1.id!!)
@@ -97,7 +106,7 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
     }
 
     fun addPerson(personData: SurnameContactsData) {
-        showDialog("",mContext as Activity)
+        showDialog("", mContext as Activity)
         personData.id = db!!.collection(FirestoreTable.MAIN_MEMBER_NAME).document().id
         db!!.collection(FirestoreTable.MAIN_MEMBER_NAME)
             .document(personData.id!!)
@@ -147,6 +156,7 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
         fun onNext(view: View) {
             try {
                 var intent = Intent(mContext, AddMemberActivity::class.java)
+                intent.putExtra("surname_list", mGetSurName)
                 mContext.startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -169,12 +179,12 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
         position: Int,
         id: Long
     ) {
-        surnameContactsData?.surname_id = data[position].id.toString()
+        surnameContactsData?.surname_id = mGetSurName?.get(position)?.id.toString()
             Toast.makeText(
-            mContext,
-            data[position].id.toString() + " " + data[position].surname,
-            Toast.LENGTH_LONG
-        ).show();
+                mContext,
+                mGetSurName?.get(position)?.id.toString() + " " + mGetSurName?.get(position)?.surname,
+                Toast.LENGTH_SHORT
+            ).show();
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

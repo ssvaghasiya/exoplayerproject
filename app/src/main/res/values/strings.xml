@@ -257,6 +257,7 @@
     <string name="helllo_friends">Helllo Friends</string>
     <string name="index">index</string>
     <string name="number">Number</string>
+    <string name="admin">Admin</string>
 
     <string-array name="items_spinner_office">
         <item>Select Office</item>

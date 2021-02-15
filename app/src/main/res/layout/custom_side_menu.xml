@@ -9,87 +9,87 @@
     </data>
 
     <LinearLayout
-        android:id="@+id/container"
+        android:id="@+id/containerNav"
         android:layout_width="@dimen/_240sdp"
         android:layout_height="match_parent"
-        android:background="#0C1427"
+        android:background="@color/gray_61"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/navHeader"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="150dp"
+            android:background="@android:color/holo_red_light"
+            android:gravity="bottom"
             android:orientation="horizontal"
             android:padding="@dimen/_10sdp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal">
 
-
-                <com.newproject.custom.CTextViewSB
-                    android:id="@+id/txtFullName"
-                    style="@style/txt_fff_18"
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLength="30"
-                    android:singleLine="true"
-                    android:text="@string/welcome" />
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:contentDescription="@null" />
 
-                <com.newproject.custom.CTextViewEB
-                    android:id="@+id/txtUserName"
-                    style="@style/txt_fff_22"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:maxLength="30"
-                    android:singleLine="true"
-                    android:text="@string/aamir_rehman" />
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <com.newproject.custom.CTextViewB
+                        android:id="@+id/txtFullName"
+                        style="@style/txt_fff_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="XYZ" />
+
+                    <com.newproject.custom.CTextViewB
+                        android:id="@+id/txtUserName"
+                        style="@style/txt_fff_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="xyz@gmail.com" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="@dimen/_10sdp"
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_5sdp"
                 android:layout_gravity="center_vertical|end"
                 android:contentDescription="@null"
-                android:src="@drawable/ic_icon_ionic_md_close" />
+                android:src="@drawable/ic_launcher_foreground" />
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:background="@color/gray_divider"
-            android:gravity="center_vertical"
-            android:orientation="vertical" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMenuList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_side_menu" />
+                tools:listitem="@layout/item_navigation_drawer" />
+
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:background="@color/gray_divider"
-            android:gravity="center_vertical"
-            android:orientation="vertical" />
-
     </LinearLayout>
 </layout>

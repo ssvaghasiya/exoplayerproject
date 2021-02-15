@@ -77,7 +77,7 @@
                     android:text="Surname ID" />
 
                 <Spinner
-                    android:id="@+id/spinnerOffice"
+                    android:id="@+id/spinnerSurName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:overlapAnchor="false"
