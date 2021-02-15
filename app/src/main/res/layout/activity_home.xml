@@ -240,6 +240,7 @@
                             android:layout_marginStart="@dimen/_25sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:background="@drawable/border"
+                            android:onClick="@{(v)->viewClickHandler.onAddPerson(v)}"
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView

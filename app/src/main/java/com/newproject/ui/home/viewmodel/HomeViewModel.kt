@@ -13,6 +13,7 @@ import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.ActivityHomeBinding
 import com.newproject.interfaces.TopBarClickListener
 import com.newproject.apputils.LanguageHelper
+import com.newproject.ui.addperson.view.AddPersonActivity
 import com.newproject.ui.gallery.view.GalleryActivity
 import com.newproject.ui.home.view.HomeActivity
 import com.newproject.ui.homefragment.utils.HomeAdapter
@@ -87,6 +88,15 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
         fun onContact(view: View) {
             try {
                 var intent = Intent(mContext, SurnameActivity::class.java)
+                mContext.startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        fun onAddPerson(view: View) {
+            try {
+                var intent = Intent(mContext, AddPersonActivity::class.java)
                 mContext.startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()

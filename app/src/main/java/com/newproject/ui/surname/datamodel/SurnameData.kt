@@ -1,6 +1,8 @@
 package com.newproject.ui.surname.datamodel
 
-class SurnameData{
+import java.io.Serializable
+
+class SurnameData: Serializable{
     var id: String? = null
     var surname: String? = null
 }

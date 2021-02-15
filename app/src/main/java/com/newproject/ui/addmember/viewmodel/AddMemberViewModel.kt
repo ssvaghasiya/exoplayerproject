@@ -1,59 +1,41 @@
-package com.newproject.ui.surname.viewmodel
+package com.newproject.ui.addmember.viewmodel
 
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.content.Intent
 import android.view.View
 import com.newproject.R
 import com.newproject.apputils.Debug
 import com.newproject.apputils.FirestoreTable
 import com.newproject.apputils.Utils
 import com.newproject.base.viewmodel.BaseViewModel
-import com.newproject.databinding.ActivityGalleryBinding
-import com.newproject.databinding.ActivitySurnameBinding
+import com.newproject.databinding.ActivityAddMemberBinding
+import com.newproject.databinding.ActivityAddPersonBinding
 import com.newproject.interfaces.TopBarClickListener
-import com.newproject.ui.exoplayer.view.ExoplayerActivity
 import com.newproject.ui.surname.datamodel.SurnameData
-import com.newproject.ui.surname.utils.SurnameAdapter
-import com.newproject.ui.surnamecontacts.view.SurnameContactsActivity
 
-class SurnameViewModel(application: Application) : BaseViewModel(application) {
+class AddMemberViewModel(application: Application) : BaseViewModel(application) {
 
-    private lateinit var binder: ActivitySurnameBinding
+    private lateinit var binder: ActivityAddMemberBinding
     private lateinit var mContext: Context
-    lateinit var adapter: SurnameAdapter
 
-
-    fun setBinder(binder: ActivitySurnameBinding) {
+    fun setBinder(binder: ActivityAddMemberBinding) {
         this.binder = binder
         this.mContext = binder.root.context
         this.binder.viewModel = this
         this.binder.viewClickHandler = ViewClickHandler()
-        binder.topBar.isTextShow = true
-        binder.topBar.isBackShow = true
-        binder.topBar.topBarClickListener = SlideMenuClickListener()
+//        binder.topBar.isTextShow = true
+//        binder.topBar.isBackShow = true
+//        binder.topBar.topBarClickListener = SlideMenuClickListener()
         init()
     }
 
     private fun init() {
-        adapter = SurnameAdapter(mContext)
-        binder.rvSurname.adapter = adapter
-        adapter.setEventListener(object : SurnameAdapter.EventListener {
-            override fun onItemClick(pos: Int, item: SurnameData) {
-                var intent = Intent(mContext, SurnameContactsActivity::class.java)
-                intent.putExtra("surname",item)
-                mContext.startActivity(intent)
-            }
-        })
-        getSurnameList()
+
     }
 
     private fun getSurnameList() {
         try {
-
-//            var query = db.collection(FirestoreTable.CHAT)
-//                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
             showDialog("",mContext as Activity)
             var query = db!!.collection(FirestoreTable.SURNAME)
 
@@ -61,7 +43,6 @@ class SurnameViewModel(application: Application) : BaseViewModel(application) {
             query.get().addOnSuccessListener { result ->
                 if (result != null && result.isEmpty.not()) {
                     val item = result.toObjects(SurnameData::class.java)
-                    adapter.addAll(item)
                     Debug.e("Get All Data Successfully")
                 }
                 dismissDialog()

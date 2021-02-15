@@ -258,5 +258,9 @@
     <string name="index">index</string>
     <string name="number">Number</string>
 
-
+    <string-array name="items_spinner_office">
+        <item>Select Office</item>
+        <item>Office</item>
+        <item>Apartment</item>
+    </string-array>
 </resources>

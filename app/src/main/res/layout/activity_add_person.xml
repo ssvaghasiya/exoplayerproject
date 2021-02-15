@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewClickHandler"
+            type="com.newproject.ui.addperson.viewmodel.AddPersonViewModel.ViewClickHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.newproject.ui.addperson.viewmodel.AddPersonViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.addperson.view.AddPersonActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp">
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Surname" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtSurName"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="surname"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+
+                <com.newproject.custom.CButtonViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:onClick="@{(v)->viewClickHandler.onAddSurname(v)}"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:text="Add Surname"
+                    android:textAllCaps="false" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Surname ID" />
+
+                <Spinner
+                    android:id="@+id/spinnerOffice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overlapAnchor="false"
+                    android:popupBackground="@color/white"
+                    android:spinnerMode="dropdown" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Address" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtAddress"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="surname"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="business Address" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtBusinessAddress"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="surname"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Business Detail" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtBusinessDetail"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="surname"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Name" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtName"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="name"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Phone No." />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtPhone"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+
+                <com.newproject.custom.CButtonViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:onClick="@{(v)->viewClickHandler.onAddPerson(v)}"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:text="Add Person"
+                    android:textAllCaps="false" />
+
+                <com.newproject.custom.CButtonViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:onClick="@{(v)->viewClickHandler.onNext(v)}"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:text="Next"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

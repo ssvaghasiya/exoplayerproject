@@ -56,34 +56,19 @@ class PersonDetailsViewModel(application: Application) : BaseViewModel(applicati
     private fun getPersonDetails() {
         try {
 
-//            var query = db.collection(FirestoreTable.CHAT)
-//                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
-            showDialog("",mContext as Activity)
-            var query = db!!.collection(FirestoreTable.SUB_DETAIL_EACH_MEMBER)
-
-
-            query.get().addOnSuccessListener { result ->
-                if (result != null && result.isEmpty.not()) {
-                    if (result != null && result.isEmpty.not()) {
-                        val item = result.toObjects(PersonDetailData::class.java)
-                        for (i in item) {
-                            Debug.e(i.main_number.toString()+" "+person?.phone)
-                            if (i.main_number.equals(person?.phone)) {
-                                Debug.e(i.name.toString())
-                                adapter.add(i)
-                            }
-                        }
-                        Debug.e("Get All Data Successfully")
-                    }
+            showDialog("", mContext as Activity)
+            db!!.collection(FirestoreTable.SUB_DETAIL_EACH_MEMBER)
+                .whereEqualTo("main_number", person!!.phone!!.trim()).get()
+                .addOnSuccessListener { documents ->
+                    dismissDialog()
+                    Debug.e("documents", documents.size().toString())
+                    val item = documents.toObjects(PersonDetailData::class.java)
+                    adapter.addAll(item)
                 }
-                dismissDialog()
-            }.addOnFailureListener {
-                it.printStackTrace()
-                dismissDialog()
-            }.addOnCompleteListener {
-                dismissDialog()
-            }
-
+                .addOnFailureListener { exception ->
+                    dismissDialog()
+                    Debug.e("Error getting documents:", exception.message.toString())
+                }
 
         } catch (e: Exception) {
             e.printStackTrace()
