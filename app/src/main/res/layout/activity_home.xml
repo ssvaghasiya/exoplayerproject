@@ -202,6 +202,7 @@
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_25sdp"
                             android:background="@drawable/border"
+                            android:onClick="@{(v)->viewClickHandler.onAdvertise(v)}"
                             android:orientation="vertical">
 
                             <androidx.cardview.widget.CardView

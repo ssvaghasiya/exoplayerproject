@@ -20,18 +20,21 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppThemeDefault">
+        <activity android:name=".ui.ads.view.AdsActivity"></activity>
         <activity
             android:name=".ui.addmember.view.AddMemberActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize" />
-        <activity android:name=".ui.addperson.view.AddPersonActivity"
+        <activity
+            android:name=".ui.addperson.view.AddPersonActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustResize" />
-        <activity android:name=".ui.persondetail.view.PersonDetailsActivity"
+        <activity
+            android:name=".ui.persondetail.view.PersonDetailsActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

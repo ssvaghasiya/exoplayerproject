@@ -1,5 +1,6 @@
 package com.newproject.ui.home.viewmodel
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
@@ -7,13 +8,13 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.newproject.R
-import com.newproject.apputils.Constant
-import com.newproject.apputils.Utils
+import com.newproject.apputils.*
 import com.newproject.base.viewmodel.BaseViewModel
 import com.newproject.databinding.ActivityHomeBinding
 import com.newproject.interfaces.TopBarClickListener
-import com.newproject.apputils.LanguageHelper
 import com.newproject.ui.addperson.view.AddPersonActivity
+import com.newproject.ui.ads.view.AdsActivity
+import com.newproject.ui.gallery.datamodel.GalleryData
 import com.newproject.ui.gallery.view.GalleryActivity
 import com.newproject.ui.home.view.HomeActivity
 import com.newproject.ui.homefragment.utils.HomeAdapter
@@ -35,6 +36,8 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
         R.drawable.image_4,
         R.drawable.image_4
     )
+    var adsList = mutableListOf<GalleryData>()
+
 
     fun setBinder(
         binder: ActivityHomeBinding
@@ -54,15 +57,15 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
 
     fun init() {
         initDrawer(mContext)
-        binder.carouselViewHomefrag.setImageListener(imageListener)
-        binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
-        binder.carouselViewHomefrag.pageCount = sampleImages.size
+        getAdsList()
 
     }
 
     var imageListener: ImageListener = object : ImageListener {
         override fun setImageForPosition(position: Int, imageView: ImageView?) {
-            imageView?.setImageResource(sampleImages[position])
+//            imageView?.setImageResource(adsList[position])
+            val urlLogo = adsList[position].image
+            Utils.loadImage(imageView!!, urlLogo!!,mContext, R.drawable.placeholder)
         }
     }
 
@@ -73,6 +76,34 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
         }
     }
 
+    private fun getAdsList() {
+        try {
+
+            showDialog("", mContext as Activity)
+            var query = db!!.collection(FirestoreTable.BUSINESSADVERTISE)
+
+            query.get().addOnSuccessListener { result ->
+                if (result != null && result.isEmpty.not()) {
+                    val item = result.toObjects(GalleryData::class.java)
+                    adsList.addAll(item)
+                    binder.carouselViewHomefrag.setImageListener(imageListener)
+                    binder.carouselViewHomefrag.setImageClickListener(imageClickListener)
+                    binder.carouselViewHomefrag.pageCount = adsList.size
+                    Debug.e("Get All Data Successfully")
+                }
+                dismissDialog()
+            }.addOnFailureListener {
+                it.printStackTrace()
+                dismissDialog()
+            }.addOnCompleteListener {
+                dismissDialog()
+            }
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
     inner class ViewClickHandler {
         fun onGallery(view: View) {
@@ -92,6 +123,16 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
                 e.printStackTrace()
             }
         }
+
+        fun onAdvertise(view: View) {
+            try {
+                var intent = Intent(mContext, AdsActivity::class.java)
+                mContext.startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
 
         fun onAddPerson(view: View) {
             try {

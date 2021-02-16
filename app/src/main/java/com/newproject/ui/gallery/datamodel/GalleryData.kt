@@ -1,3 +1,7 @@
 package com.newproject.ui.gallery.datamodel
 
-data class GalleryData(val imageResource: String, val text: String)
+class GalleryData{
+    var id: String? = null
+    var image: String? = null
+    var name: String? = null
+}

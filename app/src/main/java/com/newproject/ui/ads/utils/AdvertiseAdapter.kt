@@ -1,20 +1,18 @@
-package com.newproject.ui.gallery.utils
+package com.newproject.ui.ads.utils
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.newproject.R
 import com.newproject.apputils.Debug
 import com.newproject.apputils.Utils
 import com.newproject.databinding.ItemGalleryBinding
-import com.newproject.databinding.ItemVideosBinding
 import com.newproject.ui.gallery.datamodel.GalleryData
 
-class GalleryAdapter() : RecyclerView.Adapter<GalleryAdapter.MyViewHolder>() {
+class AdvertiseAdapter() : RecyclerView.Adapter<AdvertiseAdapter.MyViewHolder>() {
 
     private lateinit var mEventListener: EventListener
 
@@ -63,7 +61,7 @@ class GalleryAdapter() : RecyclerView.Adapter<GalleryAdapter.MyViewHolder>() {
             val urlLogo = item.image
             Debug.e(item.image)
             Utils.loadImage(holder.itemBinding.imageGallery, urlLogo!!,context, R.drawable.placeholder)
-            holder.itemBinding.textviewGallary.text = item.name
+            holder.itemBinding.textviewGallary.visibility = View.GONE
 
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
