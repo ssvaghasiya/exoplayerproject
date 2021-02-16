@@ -174,6 +174,7 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
             ).show();
         } else if (adapterView?.id == binder.spinnerMainMemberPhone.id) {
             personDetailData?.main_number =  mGetPhoneNumber?.get(position)?.phone
+            personDetailData?.main_name_id =  mGetPhoneNumber?.get(position)?.id
             Toast.makeText(
                 mContext,
                 mGetPhoneNumber?.get(position)?.id.toString() + " " + mGetPhoneNumber?.get(position)?.phone,

@@ -98,7 +98,7 @@
                     style="@style/txt_000_14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="surname"
+                    android:hint="address"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 
@@ -116,7 +116,7 @@
                     style="@style/txt_000_14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="surname"
+                    android:hint="business Address"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 
@@ -134,7 +134,7 @@
                     style="@style/txt_000_14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="surname"
+                    android:hint="Business Detail"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 
@@ -152,7 +152,7 @@
                     style="@style/txt_000_14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="name"
+                    android:hint="Name"
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 
@@ -170,7 +170,7 @@
                     style="@style/txt_000_14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone"
+                    android:hint="Phone No."
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 

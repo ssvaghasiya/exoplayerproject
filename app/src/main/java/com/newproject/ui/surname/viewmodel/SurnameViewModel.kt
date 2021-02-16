@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.view.View
+import com.google.firebase.firestore.Query
 import com.newproject.R
 import com.newproject.apputils.Debug
 import com.newproject.apputils.FirestoreTable
@@ -55,7 +56,7 @@ class SurnameViewModel(application: Application) : BaseViewModel(application) {
 //            var query = db.collection(FirestoreTable.CHAT)
 //                .whereEqualTo(RequestParamsUtils.SENDER_ID, loggedInUserId)
             showDialog("",mContext as Activity)
-            var query = db!!.collection(FirestoreTable.SURNAME)
+            var query = db!!.collection(FirestoreTable.SURNAME).orderBy("surname", Query.Direction.ASCENDING)
 
 
             query.get().addOnSuccessListener { result ->

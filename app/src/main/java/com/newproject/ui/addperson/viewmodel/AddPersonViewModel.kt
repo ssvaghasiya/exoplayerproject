@@ -59,6 +59,12 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
 //                    surnameList.clear()
 //                    surnameList.addAll(item)
                     try {
+                        binder.edtAddress.setText("")
+                        binder.edtBusinessAddress.setText("")
+                        binder.edtBusinessDetail.setText("")
+                        binder.edtName.setText("")
+                        binder.edtPhone.setText("")
+
                         mGetSurName?.clear()
                         mGetSurName?.addAll(item)
                         if(mGetSurName?.size!! > 0){
