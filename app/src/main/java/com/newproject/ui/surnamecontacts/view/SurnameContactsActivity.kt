@@ -26,4 +26,14 @@ class SurnameContactsActivity : BaseActivity() {
         viewModel = ViewModelProvider(activity).get(SurnameContactsViewModel::class.java)
         viewModel.setBinder(binding)
     }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        viewModel.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+    }
 }

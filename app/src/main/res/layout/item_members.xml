@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.newproject.custom.CTextView
+            android:id="@+id/tvName"
+            style="@style/txt_000_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_baseline_call_24" />
+
+            <com.newproject.custom.CTextView
+                android:id="@+id/tvPhone"
+                style="@style/txt_000_14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="9081985641" />
+
+        </LinearLayout>
+
+        <com.newproject.custom.CTextView
+            android:id="@+id/tvRelation"
+            style="@style/txt_000_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="સંબંધ : " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.newproject.custom.CTextView
+                android:id="@+id/tvDOB"
+                style="@style/txt_000_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="જ. તા : " />
+
+            <com.newproject.custom.CTextView
+                android:id="@+id/tvEducation"
+                style="@style/txt_000_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="અભ્યાસ : " />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.newproject.custom.CTextView
+                android:id="@+id/tvAge"
+                style="@style/txt_000_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="ઉંમર : " />
+
+            <com.newproject.custom.CTextView
+                android:id="@+id/tvBloodGroup"
+                style="@style/txt_000_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="બ્લડ ગ્રુપ : " />
+
+        </LinearLayout>
+
+        <com.newproject.custom.CTextView
+            android:id="@+id/tvBusiness"
+            style="@style/txt_000_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="બીઝનેસ : " />
+
+    </LinearLayout>
+</layout>

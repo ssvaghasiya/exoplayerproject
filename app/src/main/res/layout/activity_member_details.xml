@@ -24,72 +24,144 @@
             android:id="@+id/topbar"
             layout="@layout/topbar" />
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/_5sdp"
-            android:paddingEnd="@dimen/_5sdp"
-            android:paddingTop="@dimen/_5sdp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border"
                 android:orientation="vertical"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp">
-
-                <com.newproject.custom.CTextView
-                    style="@style/txt_000_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="Name" />
-
-                <com.newproject.custom.CTextView
-                    style="@style/txt_000_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="*હાલ નુ સરનામુ" />
-
-                <com.newproject.custom.CTextView
-                    style="@style/txt_000_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:text="166 શાંતિનિકેતન સો. પુનાગામ" />
+                android:descendantFocusability="blocksDescendants"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:orientation="horizontal">
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/imgCall"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:contentDescription="@null"
-                        android:src="@drawable/ic_baseline_call_24" />
+                    <com.newproject.custom.CTextView
+                        android:id="@+id/tvpersonName"
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Name" />
 
                     <com.newproject.custom.CTextView
                         style="@style/txt_000_14"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:text="9081985641" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="*હાલ નુ સરનામુ" />
+
+                    <com.newproject.custom.CTextView
+                        android:id="@+id/tvAddress"
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="166 શાંતિનિકેતન સો. પુનાગામ" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgCall"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_baseline_call_24" />
+
+                        <com.newproject.custom.CTextView
+                            android:id="@+id/tvPhone"
+                            style="@style/txt_000_14"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:text="9081985641" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <com.newproject.custom.CTextView
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="*ધંધા નો પ્રકાર" />
+
+                    <com.newproject.custom.CTextView
+                        android:id="@+id/tvBusiness"
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="166 શાંતિનિકેતન સો. પુનાગામ" />
+
+
+                    <com.newproject.custom.CTextView
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="*ધંધા નુ સરનામુ" />
+
+                    <com.newproject.custom.CTextView
+                        android:id="@+id/tvBusinessAddress"
+                        style="@style/txt_000_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="166 શાંતિનિકેતન સો. પુનાગામ" />
 
                 </LinearLayout>
 
+                <com.newproject.custom.CTextView
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:text="*ઘર ના સભ્યો" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_members"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             </LinearLayout>
-        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </layout>

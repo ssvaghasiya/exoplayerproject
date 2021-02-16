@@ -79,7 +79,7 @@ class HomeViewModel(application: Application) : BaseViewModel(application){
     private fun getAdsList() {
         try {
 
-            showDialog("", mContext as Activity)
+//            showDia/log("", mContext as Activity)
             var query = db!!.collection(FirestoreTable.BUSINESSADVERTISE)
 
             query.get().addOnSuccessListener { result ->

@@ -1,15 +1,17 @@
 package com.newproject.ui.surnamecontacts.utils
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.newproject.R
 import com.newproject.databinding.ItemContactsBinding
-import com.newproject.databinding.ItemSurnameBinding
-import com.newproject.ui.surname.utils.SurnameAdapter
 import com.newproject.ui.surnamecontacts.datamodel.SurnameContactsData
+
 
 class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyViewHolder>() {
 
@@ -30,6 +32,8 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
 
     interface EventListener {
         fun onItemClick(pos: Int, item: SurnameContactsData)
+        fun onWhatsappClick(pos: Int, item: SurnameContactsData)
+        fun onCallMake(pos: Int, item: SurnameContactsData)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -59,12 +63,21 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
             holder.itemBinding.txtIndex.text = (position + 1).toString()+"."
             holder.itemBinding.txtPersonNamee.text = item.name
             holder.itemBinding.txtNumber.text = item.phone
+
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
         }
 
+        holder.itemBinding.ivWhatsapp.setOnClickListener {
+            mEventListener.onWhatsappClick(position, item)
+        }
+
+        holder.itemBinding.imgCall.setOnClickListener {
+            mEventListener.onCallMake(position, item)
+        }
+
         holder.itemBinding.root.setOnClickListener {
-            mEventListener.onItemClick(position,item)
+            mEventListener.onItemClick(position, item)
         }
 
     }
@@ -87,5 +100,7 @@ class SurnameContactsAdapter() : RecyclerView.Adapter<SurnameContactsAdapter.MyV
         notifyDataSetChanged()
     }
 
-    inner class MyViewHolder(internal var itemBinding: ItemContactsBinding) : RecyclerView.ViewHolder(itemBinding.root)
+    inner class MyViewHolder(internal var itemBinding: ItemContactsBinding) : RecyclerView.ViewHolder(
+        itemBinding.root
+    )
 }

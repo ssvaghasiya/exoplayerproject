@@ -66,20 +66,23 @@ class SplashActivity : BaseActivity() {
         }
         Utils.getHashKey()
 
-        try {
-            if (Utils.isInternetConnected(activity)) {
+        startApplication(1000)
 
 
-                checkPermission(this, permissionsListener)
-
-            } else {
-                handler.postDelayed(dialogRunnable, 100)
-            }
-
-
-        } catch (e: NoInternetException) {
-            e.printStackTrace()
-        }
+//        try {
+//            if (Utils.isInternetConnected(activity)) {
+//
+//
+//                checkPermission(this, permissionsListener)
+//
+//            } else {
+//                handler.postDelayed(dialogRunnable, 100)
+//            }
+//
+//
+//        } catch (e: NoInternetException) {
+//            e.printStackTrace()
+//        }
         //  getFirebaseToken()
     }
 
@@ -123,8 +126,6 @@ class SplashActivity : BaseActivity() {
                     finish()
                 }
             }).show()
-
-
     }
 
     internal var dialogRunnable: Runnable = object : Runnable {

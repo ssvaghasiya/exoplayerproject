@@ -10,5 +10,7 @@ class PersonDetailData {
     var name: String? = null
     var occupation: String? = null
     var phone: String? = null
+    var bloodgroup: String? = null
+    var relation: String? = null
     var surname_id: String? = null
 }

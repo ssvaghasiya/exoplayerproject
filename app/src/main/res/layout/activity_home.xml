@@ -114,7 +114,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_25sdp"
-                            android:background="@drawable/border"
                             android:onClick="@{(v)->viewClickHandler.onGallery(v)}"
                             android:orientation="vertical">
 
@@ -153,7 +152,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_25sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/border"
                             android:onClick="@{(v)->viewClickHandler.onContact(v)}"
                             android:orientation="vertical">
 
@@ -201,7 +199,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_25sdp"
-                            android:background="@drawable/border"
                             android:onClick="@{(v)->viewClickHandler.onAdvertise(v)}"
                             android:orientation="vertical">
 
@@ -240,7 +237,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_25sdp"
                             android:layout_marginTop="@dimen/_5sdp"
-                            android:background="@drawable/border"
                             android:onClick="@{(v)->viewClickHandler.onAddPerson(v)}"
                             android:orientation="vertical">
 

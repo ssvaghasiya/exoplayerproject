@@ -172,6 +172,41 @@
                     android:padding="@dimen/_10sdp"
                     android:singleLine="true" />
 
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Relation" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtRelation"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Relation"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="Blood Group" />
+
+                <com.newproject.custom.CEditTextView
+                    android:id="@+id/edtBloodGroup"
+                    style="@style/txt_000_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Blood Group"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true" />
 
                 <com.newproject.custom.CButtonViewB
                     style="@style/txt_000_14"

@@ -118,6 +118,8 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
                 binder.edtName.setText("")
                 binder.edtPhone.setText("")
                 binder.edtOccupation.setText("")
+                binder.edtBloodGroup.setText("")
+                binder.edtRelation.setText("")
             }
             .addOnFailureListener { exception ->
                 dismissDialog()
@@ -151,6 +153,9 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
                 personDetailData?.name = binder.edtName.text.toString()
                 personDetailData?.phone = binder.edtPhone.text.toString()
                 personDetailData?.occupation = binder.edtOccupation.text.toString()
+                personDetailData?.bloodgroup = binder.edtBloodGroup.text.toString()
+                personDetailData?.relation = binder.edtRelation.text.toString()
+
                 addMember(personDetailData!!)
             } catch (e: Exception) {
                 e.printStackTrace()
