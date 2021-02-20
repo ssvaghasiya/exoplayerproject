@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "610338787976",
-    "project_id": "vanda-ac1c9",
-    "storage_bucket": "vanda-ac1c9.appspot.com"
+    "project_number": "566770083056",
+    "project_id": "vanda-6ce2c",
+    "storage_bucket": "vanda-6ce2c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:610338787976:android:18aace23f042b5ae92453d",
+        "mobilesdk_app_id": "1:566770083056:android:7a5aadeeb4cd094b7ace35",
         "android_client_info": {
           "package_name": "com.vanda"
         }
       },
       "oauth_client": [
         {
-          "client_id": "610338787976-9h3eq5gk8vd6mk49q40ao597b798k0fg.apps.googleusercontent.com",
+          "client_id": "566770083056-b62ihjpq1hckoebiv0g25qmgertf7t1k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.vanda",
-            "certificate_hash": "aecde958fd34ae956a530d1609b3b9cce0f2bcde"
+            "certificate_hash": "a35c6cea2c4ae43447a02938eac03fb29a5f44a4"
           }
         },
         {
-          "client_id": "610338787976-5apkflr43l5o4fcfj5u5l05l90t98abn.apps.googleusercontent.com",
+          "client_id": "566770083056-3gok4v3f7v2nrom1q15fns105hh3tdl2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTj0QzD3V1ivz86igwMn3oRx5W568gvHY"
+          "current_key": "AIzaSyAat-6iyMlI_KNkvKnGgKfmCC_b8nnQpjo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "610338787976-5apkflr43l5o4fcfj5u5l05l90t98abn.apps.googleusercontent.com",
+              "client_id": "566770083056-3gok4v3f7v2nrom1q15fns105hh3tdl2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
