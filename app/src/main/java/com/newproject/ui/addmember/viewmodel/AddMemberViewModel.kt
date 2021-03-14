@@ -6,6 +6,7 @@ import android.content.Context
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
+import com.google.firebase.firestore.Query
 import com.newproject.R
 import com.newproject.apputils.Debug
 import com.newproject.apputils.FirestoreTable
@@ -46,10 +47,49 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
     }
 
     private fun init() {
-        getMainMemberList()
         mGetSurName =
-            (mContext as Activity).getIntent().extras?.getSerializable("surname_list") as ArrayList<SurnameData>
+            (mContext as Activity).getIntent().extras?.getSerializable("surname_list") as ArrayList<SurnameData>?
+        if(mGetSurName.isNullOrEmpty().not()){
+            getMainMemberList()
+        } else{
+            getSurnameList()
+        }
         Debug.e("array", mGetSurName.toString())
+    }
+
+    private fun getSurnameList() {
+        try {
+            showDialog("", mContext as Activity)
+            var query = db!!.collection(FirestoreTable.SURNAME)
+
+
+            query.get().addOnSuccessListener { result ->
+                if (result != null && result.isEmpty.not()) {
+                    val item = result.toObjects(SurnameData::class.java)
+                    try {
+                        mGetSurName = ArrayList()
+                        mGetSurName?.clear()
+                        mGetSurName?.addAll(item)
+
+                        getMainMemberList()
+
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
+                dismissDialog()
+            }.addOnFailureListener {
+                it.printStackTrace()
+                dismissDialog()
+            }.addOnCompleteListener {
+                dismissDialog()
+            }
+
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
     }
 
     private fun getMainMemberList() {
@@ -128,6 +168,8 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
     }
 
 
+
+
     inner class SlideMenuClickListener : TopBarClickListener {
         override fun onTopBarClickListener(view: View?, value: String?) {
             Utils.hideKeyBoard(getContext(), view!!)
@@ -172,19 +214,24 @@ class AddMemberViewModel(application: Application) : BaseViewModel(application),
         if (adapterView?.id == binder.spinnerSurName.id) {
             personDetailData?.surname_id = mGetSurName?.get(position)?.id.toString()
 
-            Toast.makeText(
-                mContext,
-                mGetSurName?.get(position)?.id.toString() + " " + mGetSurName?.get(position)?.surname,
-                Toast.LENGTH_SHORT
-            ).show();
+//            Toast.makeText(
+//                mContext,
+//                mGetSurName?.get(position)?.id.toString() + " " + mGetSurName?.get(position)?.surname,
+//                Toast.LENGTH_SHORT
+//            ).show();
         } else if (adapterView?.id == binder.spinnerMainMemberPhone.id) {
             personDetailData?.main_number =  mGetPhoneNumber?.get(position)?.phone
             personDetailData?.main_name_id =  mGetPhoneNumber?.get(position)?.id
-            Toast.makeText(
-                mContext,
-                mGetPhoneNumber?.get(position)?.id.toString() + " " + mGetPhoneNumber?.get(position)?.phone,
-                Toast.LENGTH_SHORT
-            ).show();
+            for(i in mGetPhoneNumber!!){
+                if(i.id == personDetailData?.main_name_id && i.surname_id == personDetailData?.surname_id){
+                    binder.tvMainMem.text = i.name.toString()
+                }
+            }
+//            Toast.makeText(
+//                mContext,
+//                mGetPhoneNumber?.get(position)?.id.toString() + " " + mGetPhoneNumber?.get(position)?.phone,
+//                Toast.LENGTH_SHORT
+//            ).show();
         }
     }
 

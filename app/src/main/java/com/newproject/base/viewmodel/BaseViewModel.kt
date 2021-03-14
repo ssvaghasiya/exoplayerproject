@@ -41,6 +41,7 @@ import com.newproject.ui.login.view.LoginActivity
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.newproject.ui.MyApplication
+import com.newproject.ui.addmember.view.AddMemberActivity
 import com.newproject.ui.addperson.view.AddPersonActivity
 import java.text.SimpleDateFormat
 import java.util.*
@@ -127,7 +128,9 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
         customSideMenuBinding.rvMenuList.adapter = mAdapter
         val data = ArrayList<MenuItem>()
         data.add(MenuItem("1", R.drawable.ic_home, getLabelText(R.string.home)))
-        data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.admin)))
+        data.add(MenuItem("2", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.add_main_member_detail)))
+        data.add(MenuItem("3", R.drawable.ic_icon_awesome_tasks, getLabelText(R.string.add_member_detail)))
+
 //
 //
         mAdapter.addAll(data)
@@ -201,7 +204,10 @@ open class BaseViewModel(application: Application) : AppViewModel(application) {
                 }
             }
             "3" -> {
-
+                val intent = Intent(activity, AddMemberActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                activity.startActivity(intent)
+                hideMenu(false)
             }
 
             "4" -> {

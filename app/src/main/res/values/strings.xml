@@ -258,6 +258,8 @@
     <string name="index">index</string>
     <string name="number">Number</string>
     <string name="admin">Admin</string>
+    <string name="add_member_detail">Add Member Detail</string>
+    <string name="add_main_member_detail">Add Main Member</string>
 
     <string-array name="items_spinner_office">
         <item>Select Office</item>

@@ -70,6 +70,25 @@
                     android:paddingTop="@dimen/_8sdp"
                     android:paddingBottom="@dimen/_8sdp"
                     android:singleLine="true"
+                    android:text="Main Member Name" />
+
+                <com.newproject.custom.CTextView
+                    android:id="@+id/tvMainMem"
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
+                    android:text="-" />
+
+                <com.newproject.custom.CTextViewB
+                    style="@style/txt_000_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:singleLine="true"
                     android:text="age" />
 
                 <com.newproject.custom.CEditTextView

@@ -118,6 +118,11 @@ class AddPersonViewModel(application: Application) : BaseViewModel(application),
             .document(personData.id!!)
             .set(personData)
             .addOnSuccessListener {
+                binder.edtAddress.setText("")
+                binder.edtBusinessAddress.setText("")
+                binder.edtBusinessDetail.setText("")
+                binder.edtName.setText("")
+                binder.edtPhone.setText("")
                 dismissDialog()
                 Debug.e(TAG, "Person Added Successfully")
             }
